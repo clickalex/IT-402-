@@ -94,3 +94,90 @@
 | 7 | Project screenshots + viva Qs aloud + 1 timed sample paper |
 
 You’re set! Practicals are the easiest 50/100 – neat file + confident viva = full marks.
+
+---
+
+## 5. ADVANCED PRACTICE SET — 10 more tasks (for 95%+ scorers)
+
+**W7. Newsletter with columns + drop cap:** Create a 2-page newsletter → Format → Page → Columns (2) → insert a drop cap via Format → Paragraph → Drop Caps → add header/footer with page numbers → export PDF. *Shows page styles + layout control.*
+
+**W8. Mail-merge-style labels (manual):** Build a table of 10 addresses → use Tools → Mail Merge concepts via Base-registered addresses (View → Data Sources, F4) → drag fields into label frames → print one sheet. *Links Writer + Base (impresses examiners).*
+
+**C7. Grade calculator with IF + charts:** Marks sheet → add Grade column using `=IF(B2>=90,"A",IF(B2>=75,"B","C"))` → Data → Subtotals per Class → Insert → Chart (column) → title + axis labels → print. *Formulas + analysis + presentation in one file.*
+
+**C8. Attendance dashboard with linking:** One file per month (Jan/Feb/Mar sheets) → summary sheet pulls `=Jan.B2+Feb.B2+Mar.B2` → hyperlinked index (Ctrl+K) → conditional formatting for <75% (Format → Conditional) → protect summary (Tools → Protect Sheet). *Linking + protection.*
+
+**C9. Macro button panel:** Record 3 macros (FormatSheet, SortByMarks, AddDate) → View → Toolbars → Form Controls → insert 3 push Buttons → assign each macro (right-click → Control → Events) → one-click panel. *Macros + controls together.*
+
+**D7. Library mini-system (3 tables + junction):** BOOKS(BookID*, Title) + MEMBERS(MemberID*, Name) + ISSUE(IssueID*, BookID, MemberID, Date) with two 1:N relations + RI → enter 8 issues → query “books issued this month” → report grouped by member. *Full M:N via junction — project-ready.*
+
+**D8. Parameter-style queries:** Build 3 Design-View queries on STUDENT — toppers (`Marks>80` desc), failures (`Marks<40`), name search (`LIKE '*a*'`) → add `COUNT(*)` and `AVG(Marks)` row → save as Q-Top/Q-Fail/Q-Find. *Criteria + wildcards + aggregates.*
+
+**D9. Form with list box + report with totals:** Form on STUDENT with Class as List Box (typed values X-A/X-B) → add 3 records via form → report on topper query grouped by Class with `SUM`/`AVG` in footer + Title + Date + page numbers → export PDF. *Controls + grouped totals.*
+
+**M1. Mixed mini-project (all 3 apps):** Pick “Canteen Sales” → Base: ITEMS + SALES tables + bill report → Calc: import sales via F4 + monthly chart + Goal Seek (price for ₹50,000 target) → Writer: 3-page report (styles + ToC + chart image + template). *Exactly what the 10-mark project wants.*
+
+> **File tip:** Advanced tasks go on coloured separator pages in your file — examiners notice effort organisation instantly.
+
+---
+
+## 6. MOCK PRACTICAL EXAM (90 minutes · 30 marks — simulate for real!)
+
+**Rules:** No notes. One folder `Mock_YourName/`. Save every 10 minutes. Say menu paths aloud (viva habit).
+
+| Time | Task | Marks |
+|---|---|---|
+| 0–20 min | **Writer:** 2-page report — Title + Heading 1/2 styles, 1 captioned image (To Paragraph, Optimal wrap), automatic ToC on page 1, footer page numbers. Save `report.odt` + export PDF. | 10 |
+| 20–45 min | **Calc:** Branch sales (2 sheets) → Consolidate SUM on Summary → class-marks Subtotal AVERAGE → 2 Scenarios (Low/High) + 1 Goal Seek (find fee for target). Save `analysis.ods`. | 10 |
+| 45–75 min | **Base:** `shop.odb` — ITEMS(ItemID* AutoValue, Name, Price) + SALES(SaleID*, ItemID, Qty) with 1:N + RI → 6 rows → query `Qty>10` sorted desc → columnar form + 1 record via form → grouped report PDF. | 10 |
+| 75–90 min | Reopen every file, fix errors, rename neatly, write 5-line “what I did” note. | — |
+
+**Marking (self-check):** File opens + requested features visible (60%) · correct menu paths used (20%) · neat naming + PDF evidence (20%). Score ≥25/30 twice → exam-ready.
+
+---
+
+## 7. TROUBLESHOOTING CLINIC (fixes that save marks)
+
+| Problem | Likely cause | Fix |
+|---|---|---|
+| ToC is empty | Titles are manual bold, not Heading styles | Apply Heading 1/2 (F11) → right-click ToC → Update Index |
+| ToC typing vanished | You typed inside the ToC | Retype in body text; “Protect against manual changes” stays ticked |
+| Image jumps while typing | Wrong anchor | Right-click → Anchor → To Paragraph (or As Character for inline) |
+| Linked image shows red X | Source moved/renamed | Keep images in the same folder; Edit → Links to External Files → relink |
+| Subtotals look wrong | Forgot to sort first | Sort by grouping column → Data → Subtotals again |
+| Goal Seek says error | Formula cell has no formula / wrong variable | Check `=` formula exists; variable cell must feed the formula |
+| Macro won't run | Security High / wrong library | Tools → Options → Security → Medium; save under My Macros |
+| Hyperlink follows instead of editing | Left-clicked the link | Right-click → Edit/Remove Hyperlink |
+| Query returns zero rows | Criteria too strict / AND-OR row mix-up | Loosen criteria; AND = same row, OR = next row |
+| FK entry rejected | No matching PK (or tables unrelated) | Add the parent row first; check Tools → Relationships + RI |
+| Report shows no groups | Grouping level not set | Report Wizard → Grouping → pick field (e.g. Class) |
+| File lost after power cut | No backup / never saved | Save often (Ctrl+S); keep dated copies + cloud backup |
+
+---
+
+## 8. MORE VIVA — Q31 to Q50 (one-line answers)
+
+| # | Question | Answer |
+|---|---|---|
+| 31 | Page style vs paragraph style? | Page = margins/headers for the page; paragraph = formatting for one para (Heading 1). |
+| 32 | Clone Formatting vs Fill Format? | Clone copies direct formatting once; Fill Format paints a named style repeatedly (Esc exits). |
+| 33 | Embed vs link image? | Embed stores copy inside (big, safe); link stores path (small, breaks if moved). |
+| 34 | Contour wrap use? | Text follows the image's shaped edge — best for round logos. |
+| 35 | .ott vs .odt? | .ott = reusable template master; .odt = one editable document. |
+| 36 | Compare Document use? | Shows differences between two drafts as tracked changes. |
+| 37 | Consolidate vs Subtotal? | Consolidate merges dispersed ranges; Subtotal groups totals in place (sort first). |
+| 38 | Scenario vs Goal Seek direction? | Scenario forward (inputs→outputs); Goal Seek backward (output→input, 1 variable). |
+| 39 | Solver vs Goal Seek? | Solver = many variables + constraints; Goal Seek = one variable, none. |
+| 40 | My Macros vs document macros? | My Macros work in all files; document macros only in that file. |
+| 41 | Relative hyperlink benefit? | Portable — survives when the folder moves together. |
+| 42 | F4 in Calc? | Opens Data Sources to drag registered Base data into sheets. |
+| 43 | (shared) in title bar? | File is in multi-user shared mode (Tools → Share Spreadsheet). |
+| 44 | Degree vs cardinality? | Degree = columns; cardinality = rows. |
+| 45 | Candidate vs alternate key? | Candidate could be PK; alternate = candidate not chosen. |
+| 46 | Composite key example? | (ClassID, RollNo) together as PK in marks-history. |
+| 47 | Junction table purpose? | Implements M:N as two 1:N relations (e.g. ENROLMENT). |
+| 48 | Cascade delete danger? | Deleting a parent auto-deletes linked rows — use rarely. |
+| 49 | Combo box vs list box? | Combo allows typing new values; list box only offers fixed choices. |
+| 50 | PASS + fire triangle? | PASS = Pull-Aim-Squeeze-Sweep; triangle = Fuel + Heat + Oxygen. |
+
+> **Viva habit:** Answer in 2–3 lines + one example + the menu path aloud. Do all 50 aloud twice before the exam.

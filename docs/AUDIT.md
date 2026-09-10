@@ -64,3 +64,16 @@ Total site content after: **~31,600 words** across 31 HTML pages (2.5×).
   wording against the latest CBSE sample paper.
 - If CBSE issues a curriculum circular, update `content/source/` + `tools/extras.py`
   and regenerate; then refresh `syllabus.html` weightage.
+
+## 5. Pass 2 — More bank, more practice, illustrations (September 2026)
+
+- **Question bank:** 12 → **30 interactive MCQs** (5 unit quizzes with per-quiz
+  scoring), 60 → **100 objectives**, +15 rapid-fire True/False, short 13 → **25**,
+  long 7 → **14** model answers, + **second full 50-mark sample paper** with key.
+- **Practical:** 15 → **25 tasks** (W7–W8, C7–C9, D7–D9, M1 mixed project),
+  + **90-minute mock practical exam** with marking scheme, + **troubleshooting
+  clinic** (12 fixes), viva 30 → **50 Qs**.
+- **Images:** 10 original flat illustrations in `assets/img/` (~836 KB total,
+  offline, lazy-loaded, alt text) — hero, 5 unit/hub banners, ergonomics, fire
+  safety, quiz and lab art — embedded on 28 of 31 pages.
+- Re-verified: **1,052 links, 0 broken**; anchors clean; JS valid; ~35,500 words.

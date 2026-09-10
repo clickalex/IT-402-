@@ -42,3 +42,14 @@ pre code{background:none;border:0;color:inherit;padding:0}
 .unitbar{display:flex;align-items:center;gap:10px;margin-top:8px}
 .unitbar .progress{flex:1}
 @media(max-width:760px){.figtext{font-size:11px}}
+/* illustrations */
+.shot{margin:18px auto;max-width:640px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+.shot img{display:block;width:100%;height:auto}
+.shot figcaption{padding:10px 16px;color:var(--muted);font-size:.9rem;text-align:center;border-top:1px solid var(--line)}
+.hero-grid{display:flex;gap:24px;align-items:center}
+.hero-grid>div{flex:1;min-width:0}
+.hero-img{width:min(320px,38%);border-radius:14px;box-shadow:var(--shadow);background:#fff}
+.quiz h3{margin-top:0}
+.quiz{margin:18px 0}
+@media(max-width:760px){.hero-grid{flex-direction:column}.hero-img{width:100%;max-width:420px}}
+@media print{.shot{box-shadow:none;max-width:480px}.hero-img{display:none}}

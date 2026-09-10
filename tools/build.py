@@ -3,7 +3,8 @@
 import re, pathlib
 from md import md_blocks, inline
 from tpl import CHAPTERS, BY_ID, SHORT, sidebar, page
-from extras import DIAGRAMS, EXTRA_QA, QUIZ
+from extras import DIAGRAMS, EXTRA_QA
+from quiz import QUIZZES, CHAPTER_IMG, HUB_IMG
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "source"
@@ -54,9 +55,12 @@ def build_chapter(idx):
     else:
         nxt = '<a href="../question-bank.html">Next: Question Bank →</a>'
     num = idx + 1
+    img, alt, cap = CHAPTER_IMG[cid]
+    fig = f'<figure class="shot"><img src="../assets/img/{img}" alt="{alt}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
     main = f"""<div class="crumbs"><a href="../index.html">Home</a> / <a href="../{unit_file}">{unit_label}</a> / {SHORT[cid]}</div>
 <h1>{h1}</h1>
 <p class="card {theme}"><b>Chapter {num} of 20.</b> Deep study page: concepts, exact LibreOffice steps, memory tricks, mistakes to avoid, exam Q&amp;A and a hands-on task. Finish it and tick the box at the bottom.</p>
+{fig}
 {toc_html}
 <article class="chapter {theme}">
 {body}
@@ -69,13 +73,15 @@ def build_chapter(idx):
     return fname
 
 def build_quiz_html():
-    parts = ['<div class="quiz"><p id="quizScore"><b>Score: 0/0 answered</b> — click an option for instant feedback.</p>']
-    for n, (q, opts, ans) in enumerate(QUIZ, 1):
-        parts.append(f'<div class="quiz-question" data-answer="{ans}"><b>{n}. {q}</b>')
-        for o in opts:
-            parts.append(f'<label><input type="radio" name="q{n}" value="{o}"> {o}</label>')
-        parts.append('<p class="feedback"></p></div>')
-    parts.append("</div>")
+    parts = []
+    for qi, (title, qs) in enumerate(QUIZZES):
+        parts.append(f'<div class="quiz"><h3>{title}</h3><p class="quiz-score"><b>Score: 0/0 answered</b> — click an option for instant feedback.</p>')
+        for n, (q, opts, ans) in enumerate(qs, 1):
+            parts.append(f'<div class="quiz-question" data-answer="{ans}"><b>{n}. {q}</b>')
+            for o in opts:
+                parts.append(f'<label><input type="radio" name="q{qi}_{n}" value="{o}"> {o}</label>')
+            parts.append('<p class="feedback"></p></div>')
+        parts.append("</div>")
     return "\n".join(parts)
 
 def build_question_bank():
@@ -86,22 +92,26 @@ def build_question_bank():
         q, a = m.group(1).strip(), m.group(2).strip()
         return f"@@QA@@{q}|||{a}@@END@@"
     text = re.sub(r"(?m)^\d+\.\s+(.+?)\s+→\s+(.+)$", obj_repl, text)
-    # pair Q-lines with following > Ans quotes
-    text = re.sub(r"(?m)^(Q\d+\..+)$\n> \*\*Ans:\*\* (.+)$",
+    # pair Q/S/L-lines with following > Ans quotes
+    text = re.sub(r"(?m)^((?:Q|S|L)\d+\..+)$\n> \*\*Ans:\*\* (.+)$",
                   lambda m: f"@@QA@@{m.group(1).strip()}|||{m.group(2).strip()}@@END@@", text)
-    body, _ = md_blocks(text)
+    body, qb_toc = md_blocks(text)
     def qa_html(m):
         return f'<div class="qa"><strong>{m.group(1)}</strong><br>{m.group(2)}</div>'
     body = re.sub(r"@@QA@@(.+?)\|\|\|(.+?)@@END@@", qa_html, body, flags=re.S)
     timer = """<h2 class="section-title" id="timer">⏱️ Timed sample-paper mode (2 hours)</h2>
-<div class="timer card"><p>Open Section D below, start the timer, and write answers on paper. 30 min Section A + 80 min Section B + 10 min revision.</p>
+<div class="timer card"><p>Open a sample paper below, start the timer, and write answers on paper. 30 min Section A + 80 min Section B + 10 min revision.</p>
 <p class="timer-display">02:00:00</p>
 <p><button class="button" id="startTimer">Start</button> <button class="button" id="pauseTimer">Pause</button> <button class="button" id="resetTimer">Reset</button></p></div>"""
-    quiz = f'<h2 class="section-title" id="quiz">🎯 Interactive MCQ quiz (12 questions)</h2>\n{build_quiz_html()}'
+    quiz = f'<h2 class="section-title" id="quiz">🎯 Interactive MCQ quizzes (30 questions · 5 unit quizzes)</h2>\n{build_quiz_html()}'
+    qb_img, qb_alt, qb_cap = HUB_IMG["question-bank.html"]
+    qb_fig = f'<figure class="shot"><img src="assets/img/{qb_img}" alt="{qb_alt}" loading="lazy"><figcaption>{qb_cap}</figcaption></figure>'
+    qb_toc_html = '<div class="toc"><b>On this page:</b> <a href="#quiz">Quizzes</a> <a href="#timer">Timer</a> ' + " ".join(f'<a href="#{a}">{t}</a>' for lvl, a, t in qb_toc if lvl == 2) + "</div>"
     main = f"""<div class="crumbs"><a href="index.html">Home</a> / Question Bank</div>
-<h1>Question bank &amp; sample paper</h1>
-<p class="card"><b>60 one-markers + short + long answers with models + a full 50-mark sample paper.</b> Attempt without notes first. Subjective frame: definition → steps/example → benefit or precaution.</p>
-<div class="toc"><b>On this page:</b> <a href="#quiz">Quiz</a> <a href="#timer">Timer</a> <a href="#a-unit-wise-objective-practice-1-mark-each">Objectives</a> <a href="#b-short-answer-practice-2-marks-2030-words">Short</a> <a href="#c-long-answer-practice-4-marks-5080-words">Long</a> <a href="#d-full-practice-sample-paper-50-marks-2-hours">Sample paper</a></div>
+<h1>Question bank &amp; sample papers</h1>
+<p class="card"><b>100 one-markers + rapid-fire + 25 short + 14 long answers with models + TWO full 50-mark sample papers.</b> Attempt without notes first. Subjective frame: definition → steps/example → benefit or precaution.</p>
+{qb_fig}
+{qb_toc_html}
 {quiz}
 {timer}
 {body}"""
@@ -112,13 +122,18 @@ def build_practical():
     text = (SRC / "IT-402-Practical-File-and-Project-Guide.md").read_text(encoding="utf-8")
     text = re.sub(r"^# .*$", "", text, count=1, flags=re.M)
     # bold-lead practical lines **W1. ...:** ... → QA cards
-    text = re.sub(r"(?m)^(\*\*(?:W\d|C\d|D\d)\..+)$", r"@@P@@\1@@END@@", text)
-    body, _ = md_blocks(text)
+    text = re.sub(r"(?m)^(\*\*(?:W\d|C\d|D\d|M\d)\..+)$", r"@@P@@\1@@END@@", text)
+    body, pr_toc = md_blocks(text)
     body = re.sub(r"@@P@@(.+?)@@END@@",
                   lambda m: f'<div class="qa">{m.group(1)}</div>', body, flags=re.S)
+    pr_img, pr_alt, pr_cap = HUB_IMG["practical.html"]
+    pr_fig = f'<figure class="shot"><img src="assets/img/{pr_img}" alt="{pr_alt}" loading="lazy"><figcaption>{pr_cap}</figcaption></figure>'
+    pr_toc_html = '<div class="toc"><b>On this page:</b> ' + " ".join(f'<a href="#{a}">{t}</a>' for lvl, a, t in pr_toc if lvl == 2) + "</div>"
     main = f"""<div class="crumbs"><a href="index.html">Home</a> / Practical Guide</div>
 <h1>Practical file, project &amp; viva guide</h1>
-<p class="card"><b>Practical 50:</b> Writer 5 + Calc 5 + Base 10 + Viva 10 + Project 10 + File 10. Create folder <code>IT402_YourName</code>; keep editable files and PDFs separately. LibreOffice only.</p>
+<p class="card"><b>Practical 50:</b> Writer 5 + Calc 5 + Base 10 + Viva 10 + Project 10 + File 10. Create folder <code>IT402_YourName</code>; keep editable files and PDFs separately. LibreOffice only. Now with <b>25 tasks + mock exam + troubleshooting + 50 viva Qs</b>.</p>
+{pr_fig}
+{pr_toc_html}
 {body}"""
     (ROOT / "practical.html").write_text(
         page("Practical Guide · IT 402", "IT 402 practicals, project structure and viva questions", "practical.html", main), encoding="utf-8")

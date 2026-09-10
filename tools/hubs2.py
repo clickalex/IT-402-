@@ -8,6 +8,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 PARTA = """<div class="crumbs"><a href="index.html">Home</a> / Part A · Employability Skills</div>
 <h1>Part A · Employability Skills (10 marks)</h1>
 <p class="card part-a">Workplace skills for a Domestic Data Entry Operator. Paper: <b>Q1 objective (any 4/6 = 4)</b> + <b>short answers (any 3/5 × 2 = 6)</b>. Each unit below has its own detailed page — open it, study, tick complete.</p>
+<figure class="shot"><img src="assets/img/part-a-team.jpg" alt="Team communicating in an office" loading="lazy"><figcaption>Part A — the human skills behind every data operator.</figcaption></figure>
 <div class="cards">
 <div class="card"><h3>U1 · Communication-II (2)</h3>
 <p>Cycle, methods, 7 Cs, barriers, feedback, active listening.</p>
@@ -43,6 +44,7 @@ PARTA = """<div class="crumbs"><a href="index.html">Home</a> / Part A · Employa
 UNIT1 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 1 · Writer</div>
 <h1>Unit 1 · Digital Documentation — Writer (8 marks)</h1>
 <p class="card u1">Advanced LibreOffice Writer: maintainable long documents with styles, labelled images, automatic ToC, reusable templates and tracked reviews. Every chapter is a full page — open, practise on a computer, tick complete.</p>
+<figure class="shot"><img src="assets/img/writer-docs.jpg" alt="Styled document illustration" loading="lazy"><figcaption>Unit 1 — professional documents with Writer.</figcaption></figure>
 <div class="cards">
 <div class="card"><h3>Ch 1 · Introduction to Styles</h3>
 <p>6 categories, F11, Fill Format, 2 creation methods, update, load.</p>
@@ -77,6 +79,7 @@ UNIT1 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 1 · Writer<
 UNIT2 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 2 · Calc</div>
 <h1>Unit 2 · Electronic Spreadsheet — Calc (10 marks)</h1>
 <p class="card u2">Advanced LibreOffice Calc: analyse data, automate with macros, link sheets and collaborate safely. Most practical unit — learn every path by <b>doing</b> on a computer, then theory becomes easy.</p>
+<figure class="shot"><img src="assets/img/calc-sheets.jpg" alt="Spreadsheet with charts illustration" loading="lazy"><figcaption>Unit 2 — analyse and automate with Calc.</figcaption></figure>
 <div class="cards">
 <div class="card"><h3>Ch 4 · Scenarios &amp; Goal Seek</h3>
 <p>Consolidate, subtotals (sort first!), scenarios, Goal Seek F-T-V, Solver.</p>
@@ -113,6 +116,7 @@ UNIT2 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 2 · Calc</d
 UNIT3 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 3 · DBMS</div>
 <h1>Unit 3 · Database Management System — Base (12 marks ⭐)</h1>
 <p class="card u3">Biggest unit, most scoring if concepts are clear. Keep the running example through all five chapters: <b>STUDENT(RollNo*, Name, ClassID, Marks) + CLASS(ClassID*, ClassName, Teacher)</b> (* = primary key).</p>
+<figure class="shot"><img src="assets/img/dbms-base.jpg" alt="Connected database tables illustration" loading="lazy"><figcaption>Unit 3 — real databases with Base.</figcaption></figure>
 <div class="cards">
 <div class="card"><h3>Ch 8 · DBMS Intro</h3>
 <p>Data vs information, 6 advantages, 3 models, keys table, 4 objects.</p>
@@ -150,6 +154,7 @@ UNIT3 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 3 · DBMS</d
 UNIT4 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 4 · Safety</div>
 <h1>Unit 4 · Healthy, Safe &amp; Secure Environment (10 marks)</h1>
 <p class="card u4">Easiest 10 marks in the paper — pure reading + logic. Target full marks: hazard <b>types</b>, ergonomics <b>numbers</b>, evacuation <b>steps</b>, fire <b>triangle</b>, electrical first-aid <b>order</b>.</p>
+<figure class="shot"><img src="assets/img/safety-lab.jpg" alt="Safe computer lab illustration" loading="lazy"><figcaption>Unit 4 — healthy, safe and secure work.</figcaption></figure>
 <div class="cards">
 <div class="card"><h3>Ch 13 · HSS at Workplace</h3>
 <p>Health/safety/security, policies, 6 reasons, hazard gallery, lifting, hierarchy.</p>

@@ -101,14 +101,18 @@ function setupBackTop(){
 }
 function setupQuiz(){
   if(!$('.quiz'))return;
-  let score=0,answered=0;
-  $$('.quiz-question').forEach(q=>q.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{
-    if(q.dataset.done)return;q.dataset.done='1';answered++;
-    const fb=q.querySelector('.feedback');
-    if(inp.value===q.dataset.answer){score++;fb.textContent='✓ Correct';fb.style.color='#15803d'}
-    else{fb.textContent='✗ Correct answer: '+q.dataset.answer;fb.style.color='#dc2626'}
-    const s=$('#quizScore');if(s)s.innerHTML=`<b>Score: ${score}/${answered} answered (of ${$$('.quiz-question').length})</b>`;
-  })));
+  $$('.quiz').forEach(box=>{
+    let score=0,answered=0;
+    const total=box.querySelectorAll('.quiz-question').length;
+    const s=box.querySelector('.quiz-score');
+    box.querySelectorAll('.quiz-question').forEach(q=>q.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{
+      if(q.dataset.done)return;q.dataset.done='1';answered++;
+      const fb=q.querySelector('.feedback');
+      if(inp.value===q.dataset.answer){score++;fb.textContent='✓ Correct';fb.style.color='#15803d'}
+      else{fb.textContent='✗ Correct answer: '+q.dataset.answer;fb.style.color='#dc2626'}
+      if(s)s.innerHTML=`<b>Score: ${score}/${answered} answered (of ${total})</b>`;
+    })));
+  });
 }
 function setupTimer(){
   const display=$('.timer-display');if(!display)return;
