@@ -53,7 +53,7 @@ def sidebar(active, prefix=""):
             cls = ' class="active"' if f == active else ""
             parts.append(f'<a href="{ch}{f}"{cls}>{SHORT[i]}</a>')
         parts.append("</details>")
-    for href, label in [("question-bank.html", "❓ Question Bank"), ("practical.html", "💻 Practical Lab"), ("revision.html", "🧠 Revision")]:
+    for href, label in [("question-bank.html", "❓ Question Bank"), ("pyq.html", "📝 PYQ Practice"), ("practical.html", "💻 Practical Lab"), ("revision.html", "🧠 Revision")]:
         cls = ' class="active"' if href == active else ""
         parts.append(f'<a href="{prefix}{href}"{cls}>{label}</a>')
     parts.append('<h3>Progress</h3><div class="progress"><i data-progress></i></div>')

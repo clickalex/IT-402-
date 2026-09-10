@@ -72,6 +72,7 @@ INDEX = """<div class="crumbs"><a href="index.html">Home</a> / Home</div>
 <h2>Jump in</h2>
 <div class="cards"><a class="card" href="practical.html"><h3>💻 Practical lab</h3><p>25 tasks, mock exam, troubleshooting, 50 viva Qs.</p></a>
 <a class="card" href="question-bank.html"><h3>❓ Test yourself</h3><p>30-question quizzes, 100 objectives, 2 sample papers + timer.</p></a>
+<a class="card" href="pyq.html"><h3>📝 PYQ practice</h3><p>4 official CBSE papers with marking schemes + 158 chapter-wise PYQs.</p></a>
 <a class="card" href="revision.html"><h3>🧠 Exam morning</h3><p>Paths, shortcuts, numbers and answer frames.</p></a></div>"""
 
 SYLLABUS = """<div class="crumbs"><a href="index.html">Home</a> / Syllabus</div>

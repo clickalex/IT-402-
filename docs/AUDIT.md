@@ -77,3 +77,14 @@ Total site content after: **~31,600 words** across 31 HTML pages (2.5×).
   offline, lazy-loaded, alt text) — hero, 5 unit/hub banners, ergonomics, fire
   safety, quiz and lab art — embedded on 28 of 31 pages.
 - Re-verified: **1,052 links, 0 broken**; anchors clean; JS valid; ~35,500 words.
+
+## §6 Pass 3 — official PYQ practice page (2026-09-10)
+- Added `pyq.html`: library of 4 official CBSE SQPs (2022-23→2025-26) with SQP+MS PDF links,
+  158 chapter-wise PYQs (101 one-markers + 57 answered subjective, MS-gist/model labeled),
+  trend tables, 4-marker analysis, 4-week plan, self-marking guide, 2-hour timer, print-ready.
+- Sources: content/pyq/{papers,chapterwise,trends}.md → tools/pyq.py generator (mirrors build.py QA pipeline).
+- Wiring: sidebar 📝 link (tpl.py), index jump card (hubs1.py), search index (app.js),
+  per-chapter "Practise board PYQs" deep links (20 canonical anchors C-U1..C-Ch15, verified, 0 dangling).
+- Suitability flags: 2022-23/2023-24 Unit 4 (Web Applications) + mail merge marked ⛔ skip (old syllabus).
+- Note: sandbox has no outbound net, so official PDFs are linked (not vendored); bank works offline.
+- Verify: 32 pages, 1152 links 0 problems, ~42.4k words; node --check app.js OK.

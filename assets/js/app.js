@@ -29,6 +29,7 @@ const pages=[
 ['Ch 15 · Accidents & Emergencies','chapters/u4-ch15-accidents-emergencies.html','fire triangle PASS evacuation lift stairs shock 101 102 108'],
 ['Question Bank','question-bank.html','MCQ quiz short long answers sample paper timer 50 marks'],
 ['Practical Lab','practical.html','15 practicals writer calc base project file viva'],
+['PYQ Practice','pyq.html','previous year questions SQP marking scheme sample papers trends official'],
 ['Revision','revision.html','cheat sheet shortcuts paths numbers answer frame exam morning']
 ];
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);

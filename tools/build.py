@@ -4,7 +4,7 @@ import re, pathlib
 from md import md_blocks, inline
 from tpl import CHAPTERS, BY_ID, SHORT, sidebar, page
 from extras import DIAGRAMS, EXTRA_QA
-from quiz import QUIZZES, CHAPTER_IMG, HUB_IMG
+from quiz import QUIZZES, CHAPTER_IMG, HUB_IMG, PYQ_ANCHOR
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "source"
@@ -56,6 +56,7 @@ def build_chapter(idx):
         nxt = '<a href="../question-bank.html">Next: Question Bank →</a>'
     num = idx + 1
     img, alt, cap = CHAPTER_IMG[cid]
+    pyq_anchor = PYQ_ANCHOR[cid]
     fig = f'<figure class="shot"><img src="../assets/img/{img}" alt="{alt}" loading="lazy"><figcaption>{cap}</figcaption></figure>'
     main = f"""<div class="crumbs"><a href="../index.html">Home</a> / <a href="../{unit_file}">{unit_label}</a> / {SHORT[cid]}</div>
 <h1>{h1}</h1>
@@ -67,6 +68,7 @@ def build_chapter(idx):
 <h2 class="section-title">✅ Done? Mark it complete</h2>
 <label class="complete"><input type="checkbox" data-complete="{cid}"> Mark “{SHORT[cid]}” complete</label>
 </article>
+<p class="pyqlink">📝 <a href="../pyq.html#{pyq_anchor}">Practise board PYQs from this chapter →</a></p>
 <nav class="card prevnext">{prev}<span style="float:right">{nxt}</span></nav>"""
     out = ROOT / "chapters" / fname
     out.write_text(page(f"{SHORT[cid]} · IT 402", f"CBSE Class 10 IT 402 2026-27: {h1}", fname, main, prefix="../"), encoding="utf-8")

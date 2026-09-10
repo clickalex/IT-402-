@@ -77,3 +77,11 @@ HUB_IMG = {
 "question-bank.html": ("quiz-exam.jpg", "Exam sheet with checkmarks and a timer", "Practise under exam conditions — then check answers."),
 "practical.html": ("practical-lab.jpg", "Hands typing on a laptop with files", "Learn by doing — every task on a real computer."),
 }
+
+PYQ_ANCHOR = {
+  "pa-u1": "C-U1", "pa-u2": "C-U2", "pa-u3": "C-U3", "pa-u4": "C-U4", "pa-u5": "C-U5",
+  "u1-ch1": "C-Ch1", "u1-ch2": "C-Ch2", "u1-ch3": "C-Ch3",
+  "u2-ch4": "C-Ch4", "u2-ch5": "C-Ch5", "u2-ch6": "C-Ch6", "u2-ch7": "C-Ch7",
+  "u3-ch8": "C-Ch8", "u3-ch9": "C-Ch9", "u3-ch10": "C-Ch10", "u3-ch11": "C-Ch11",
+  "u3-ch12": "C-Ch12", "u4-ch13": "C-Ch13", "u4-ch14": "C-Ch14", "u4-ch15": "C-Ch15",
+}
