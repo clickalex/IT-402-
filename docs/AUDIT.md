@@ -1,0 +1,130 @@
+# IT-402 Content & Site Audit — September 2026
+
+Scope: full static study hub for CBSE Class 10 IT-402 (2026–27), LibreOffice-only.
+Goal of this pass: **more detail everywhere + one page per chapter (20 pages).**
+
+## 1. What the audit found (before)
+
+| # | Finding | Severity |
+|---|---|---|
+| 1 | Theory chapters were ~200–400 words each with generic filler Q&A repeated verbatim across chapters (“What is one benefit? It improves consistency…”) | High |
+| 2 | Progress counter said “15 chapters” but the syllabus has 20 examinable units (Part A ×5 + Ch 1–15) | Medium |
+| 3 | `question-bank.html` had only 4 MCQs / 4 short / ~2 long answers — far below a usable bank | High |
+| 4 | `practical.html` listed 15 tasks as one-liners; viva answers were 2–4 words | Medium |
+| 5 | `revision.html` / `syllabus.html` were minimal (~250 words each), no paper pattern detail | Medium |
+| 6 | `book-ch1-5.html` duplicated Chapters 1–5 with no cross-links (two sources of truth) | Low |
+| 7 | Search index covered only 11 pages + a few anchors; links would break from subfolders | Low |
+| 8 | `content/*.md` outlines were ~80-word stubs; deep notes existed only inside the ZIP | Low |
+
+Total site content before: **~12,400 words** across 11 HTML pages.
+
+## 2. What changed (after)
+
+- **20 chapter pages** in `chapters/` (Part A U1–U5 + Ch 1–15), each ~800–1,400
+  words with: marks lens, visual summary diagram (CSS/SVG), deep concepts with
+  comparison tables, exact LibreOffice menu paths + `<kbd>` shortcuts, memory
+  tricks, mistakes to avoid, exam Q&A (5+ one-mark, 3+ two-mark, 1–2 four-mark
+  with models), hands-on task, prev/next links, and a completion checkbox.
+- **Unit hubs** (`part-a.html`, `unit1-4`) rebuilt as navigators: chapter cards,
+  quick-path tables, interactive final checklists, prev/next unit flow.
+- **`question-bank.html`**: 12-question interactive MCQ quiz with instant feedback,
+  60 unit-wise objectives with answers, 13 short + 7 long model answers, full
+  50-mark sample paper with answer key, 2-hour timer.
+- **`practical.html`**: full W1–W6 / C1–C6 / D1–D6 practicals with steps,
+  file-presentation tips, project structure, 30 viva Qs, 1-week prep plan.
+- **`syllabus.html`**: complete marks table (2/3/1/3/1 + 8/10/12/10), Section A/B
+  pattern, school-based 50 split, golden rules, study route.
+- **`revision.html`**: expanded cheat sheet — all paths, shortcuts, DBMS keys,
+  numbers (50–70, 20-20-20, PASS, 101/102/108), answer frames, checklists.
+- **`index.html`**: 20-chapter dashboard with per-unit progress bars + chapter links.
+- **Search/theme/progress JS**: 31-entry index (works from root and `chapters/`
+  via relative prefix), 20-chapter progress, per-unit bars, persistent checklists,
+  `/` keyboard shortcut, mobile sidebar auto-close.
+- **CSS**: chapter nav groups, SVG figure theme, answer/checklist/banner styles,
+  themed chapter rails, print-friendly (existing print rules kept).
+- **Sources preserved**: ZIP notes imported to `content/source/`; generators in
+  `tools/` (`build.py`, `hubs1.py`, `hubs2.py`) reproduce all pages.
+- **Legacy book** kept for printing, clearly badged with links to detailed chapters.
+
+Total site content after: **~31,600 words** across 31 HTML pages (2.5×).
+
+## 3. Verification (this pass)
+
+- [x] Internal link audit: **1,018 links, 0 broken** (script in history)
+- [x] Same-page anchor audit: **0 dangling anchors**
+- [x] `node --check assets/js/app.js`: **valid**
+- [x] No external dependencies (offline-friendly); no MS Office paths in procedures
+- [x] Every chapter page has: diagram, Q&A bank, practical task, prev/next, checkbox
+- [x] Print stylesheet hides nav/chrome; revision page prints as cheat sheet
+
+## 4. Known limitations / next steps
+
+- Diagrams are lightweight CSS/SVG by design (offline, no image assets).
+- Quiz distractors are original simplifications — teachers should sanity-check
+  wording against the latest CBSE sample paper.
+- If CBSE issues a curriculum circular, update `content/source/` + `tools/extras.py`
+  and regenerate; then refresh `syllabus.html` weightage.
+
+## 5. Pass 2 — More bank, more practice, illustrations (September 2026)
+
+- **Question bank:** 12 → **30 interactive MCQs** (5 unit quizzes with per-quiz
+  scoring), 60 → **100 objectives**, +15 rapid-fire True/False, short 13 → **25**,
+  long 7 → **14** model answers, + **second full 50-mark sample paper** with key.
+- **Practical:** 15 → **25 tasks** (W7–W8, C7–C9, D7–D9, M1 mixed project),
+  + **90-minute mock practical exam** with marking scheme, + **troubleshooting
+  clinic** (12 fixes), viva 30 → **50 Qs**.
+- **Images:** 10 original flat illustrations in `assets/img/` (~836 KB total,
+  offline, lazy-loaded, alt text) — hero, 5 unit/hub banners, ergonomics, fire
+  safety, quiz and lab art — embedded on 28 of 31 pages.
+- Re-verified: **1,052 links, 0 broken**; anchors clean; JS valid; ~35,500 words.
+
+## §6 Pass 3 — official PYQ practice page (2026-09-10)
+- Added `pyq.html`: library of 4 official CBSE SQPs (2022-23→2025-26) with SQP+MS PDF links,
+  158 chapter-wise PYQs (101 one-markers + 57 answered subjective, MS-gist/model labeled),
+  trend tables, 4-marker analysis, 4-week plan, self-marking guide, 2-hour timer, print-ready.
+- Sources: content/pyq/{papers,chapterwise,trends}.md → tools/pyq.py generator (mirrors build.py QA pipeline).
+- Wiring: sidebar 📝 link (tpl.py), index jump card (hubs1.py), search index (app.js),
+  per-chapter "Practise board PYQs" deep links (20 canonical anchors C-U1..C-Ch15, verified, 0 dangling).
+- Suitability flags: 2022-23/2023-24 Unit 4 (Web Applications) + mail merge marked ⛔ skip (old syllabus).
+- Note: sandbox has no outbound net, so official PDFs are linked (not vendored); bank works offline.
+- Verify: 32 pages, 1152 links 0 problems, ~42.4k words; node --check app.js OK.
+
+## Historical SQP evidence extension — 2026-09-10
+- Read four additional official Class X SQPs: 2019–20, 2020–21, 2021–22 T1/T2 (all web-reader chunks).
+- Added historical.md: question-topic evidence and parsing/syllabus caveats, rendered on pyq.html.
+- Coverage now eight documents / seven sessions. Comparable broad-topic window: six sessions; 2019–20 kept separate. Terms counted as one session.
+- Removed misleading “Asked every single year” heading. Explicitly distinguish SQP recurrence from main-board frequency/predictions; solved bank unchanged.
+- Original PDF downloads attempted over HTTPS, HTTP and www host; failed (TLS/empty response). No PDF binaries saved, no claim of completed downloads. Historical MS not verified. 2015–18 not covered.
+- Verified generated local links, fragment targets, unique IDs, 101 QA cards + 57 answer blocks; node syntax check passed.
+
+## Trend-informed practice update and site audit — 2026-09-10
+
+### Changes
+- Expanded interactive question-bank quizzes from 30 to 50 MCQs: 10 in each of five unit quizzes. New items target recurring concepts and case-based feature selection; current safety remains covered.
+- Added 20 original written prompts (one per chapter) with suggested 2M/4M marking points. The same source renders the central bank and all 20 chapter pages to avoid answer drift.
+- Clearly labelled authored practice as original, not official PYQ text, official marking schemes or predictions. No legacy presentation/mail-merge/networking questions added.
+- Updated revision guidance, homepage historical-paper count and assessment summary. Corrected chapter links from “board PYQs” to “official SQP questions”. The official solved bank remains 158 items.
+- Added `tools/trend_practice.py` as shared practice source; MCQ heading counts now computed from quiz data rather than hardcoded.
+
+### Audit performed
+- Rebuilt with tools/build.py, hubs1.py, hubs2.py and pyq.py successfully.
+- `python3 tests/audit_site.py`: PASS — 32 generated pages, 1,367 local references, zero missing files/fragments or duplicate IDs; all 20 chapters contain practice.
+- Validated 50 rendered MCQ answer keys against source, four distinct options and exactly one correct option per question; five quizzes of ten questions.
+- Validated 20 central written prompts and unchanged 101 official QA cards + 57 answer blocks.
+- `node --check assets/js/app.js`, Python compileall and `git diff --check`: PASS.
+- Static/content audit only: no browser interaction or visual-layout test performed. External PDF availability is not asserted; original binary downloads remain blocked as documented above. Historical topic evidence is SQP-based, not main-board exam frequency.
+
+Repeatable audit: `python3 tests/audit_site.py` from repository root after rebuilding.
+
+## Chapter-wise practice selection — 2026-09-10
+- Added a labelled 20-chapter selector plus All chapters on the question bank. Filters 50 MCQs and 20 written trend-practice prompts; full papers/general bank remain visibly labelled as unfiltered.
+- Explicit chapter mapping covers every MCQ (including the linking question inside the mixed safety quiz). Every chapter has at least one MCQ and its written prompt.
+- Hides empty quiz groups, updates visible-question score/counts, retains answers across chapter changes, and locks answered radio groups to prevent answer/score disagreement.
+- Supports shareable `?chapter=<short-id>` URLs, chapter-note/SQP links and direct practice links from all chapter pages. Invalid chapter values fall back to All chapters.
+- Static audit PASS: 32 pages, 1,387 local references, zero errors; 70 tagged questions, 21 selector options, valid chapter mappings. JavaScript syntax and diff whitespace checks PASS. Browser interaction/visual testing not performed.
+
+## Part A unit-wise entry point — 2026-09-10
+- Updated the Employability Skills hub with an accessible five-unit GET-form selector opening the corresponding question-bank filter. Selection submission does not require JavaScript; filtering uses the existing bank script.
+- Added MCQ/written-practice and official SQP deep links to all five cards; updated topic guidance to match the historical review without predicting marks.
+- Removed unexplained unit-level numbers from this hub to avoid implying a guaranteed marks split; retained the 10-mark Part A pattern and all five study/checklist sections.
+- Audit PASS: 32 pages, 1,398 local references, no broken local targets; verified all five selector options and practice/SQP links. JS syntax and diff checks pass. No browser visual test performed.
