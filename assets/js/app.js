@@ -32,15 +32,17 @@ const pages=[
 ['Ch 13 · HSS at Workplace','chapters/u4-ch13-hss.html','hazard physical electrical fire lifting control hierarchy policy'],
 ['Ch 14 · Quality & Ergonomics','chapters/u4-ch14-quality-ergonomics.html','50-70 eye level 20-20-20 posture air water cleanliness RSI'],
 ['Ch 15 · Accidents & Emergencies','chapters/u4-ch15-accidents-emergencies.html','fire triangle PASS evacuation lift stairs shock 101 102 108'],
-['Question Bank','question-bank.html','MCQ quiz short long answers sample paper timer 50 marks'],
+['Chapter Question Directory','question-bank.html','1200 MCQ 4400 questions 220 per chapter short long application competitive hidden answers'],
+['Mixed Revision and Sample Papers','mixed-practice.html','unit quizzes general question bank sample paper timer 50 marks'],
 ['Practical Lab','practical.html','15 practicals writer calc base project file viva'],
 ['PYQ Practice','pyq.html','previous year questions SQP marking scheme sample papers trends official'],
 ['Revision','revision.html','cheat sheet shortcuts paths numbers answer frame exam morning']
 ];
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const TOTAL=20;
-const prefix=()=>location.pathname.includes('/chapters/')?'../':'';
+const prefix=()=>/\/(chapters|practice)\//.test(location.pathname)?'../':'';
 function init(){
+  setupPracticeNavigation();setupQuestionSections();
   const theme=localStorage.getItem('it402-theme');
   if(theme==='dark')document.body.classList.add('dark');
   $('.theme-btn')?.addEventListener('click',()=>{document.body.classList.toggle('dark');localStorage.setItem('it402-theme',document.body.classList.contains('dark')?'dark':'light')});
@@ -167,3 +169,66 @@ function setupTimer(){
   $('#resetTimer')?.addEventListener('click',()=>{clearInterval(interval);interval=null;seconds=7200;show()});
 }
 document.addEventListener('DOMContentLoaded',init);
+
+// New chapter pages use native details for answers; no JavaScript is needed to reveal them.
+function setupPracticeNavigation(){
+  const forms=$$('[data-practice-navigation]');
+  forms.forEach(form=>form.addEventListener('submit',event=>{
+    const select=form.querySelector('select[name="chapter"]');
+    const target=select?.selectedOptions[0]?.dataset.page;
+    if(!target)return;
+    event.preventDefault();
+    location.assign(target);
+  }));
+  $$('[data-hide-answers]').forEach(button=>{
+    button.hidden=false;
+    button.addEventListener('click',()=>$$('.answer-reveal[open]').forEach(answer=>answer.open=false));
+  });
+  // Old ?chapter= links and GET-form submissions now resolve to a real chapter page.
+  const status=$('#practice-navigation-status');
+  if(status){
+    const requested=new URLSearchParams(location.search).get('chapter');
+    if(requested){
+      const option=Array.from(forms[0]?.querySelector('select')?.options||[]).find(o=>o.value===requested&&o.dataset.page);
+      if(option){
+        location.replace(option.dataset.page);
+      }else{
+        status.textContent='Choose a valid chapter below to open its question page.';
+      }
+    }
+  }
+}
+
+// Keep chapter question sets navigable without changing the stored question set.
+// Without JavaScript all sections and their native answer controls remain readable.
+function setupQuestionSections(){
+  const select=$('[data-question-filter]');
+  if(!select)return;
+  const sections=Array.from($$('[data-practice-section]'));
+  const total=sections.reduce((sum,section)=>sum+section.querySelectorAll('.practice-question').length,0);
+  const allowed=new Set(['all',...sections.map(section=>section.dataset.practiceSection)]);
+  const apply=kind=>{
+    if(!allowed.has(kind))return;
+    select.value=kind;
+    sections.forEach(section=>section.hidden=kind!=='all'&&section.dataset.practiceSection!==kind);
+    const count=sections.filter(section=>!section.hidden).reduce((sum,section)=>sum+section.querySelectorAll('.practice-question').length,0);
+    $('[data-question-status]').textContent=`${count} of ${total} questions shown. Answers remain as you left them; use Hide all answers to close them.`;
+  };
+  const kindFromHash=hash=>hash.match(/^#(mcq|short|long|application|competitive)(?:-\d+)?$/)?.[1];
+  $('[data-question-controls]').hidden=false;
+  select.addEventListener('change',()=>apply(select.value));
+  $$('.practice-types a, .mcq-batches a').forEach(link=>link.addEventListener('click',()=>{
+    const kind=kindFromHash(link.hash);
+    if(kind)apply(kind); // Reveal the destination before the browser follows the anchor.
+  }));
+  const followHash=()=>{
+    const kind=kindFromHash(location.hash);
+    if(!kind)return;
+    apply(kind);
+    const target=document.getElementById(location.hash.slice(1));
+    if(target)requestAnimationFrame(()=>target.scrollIntoView());
+  };
+  window.addEventListener('hashchange',followHash);
+  if(kindFromHash(location.hash))followHash();
+  else apply('all');
+}

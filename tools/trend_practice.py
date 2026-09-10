@@ -18,7 +18,7 @@ PRACTICE = {
 'u3-ch8': ('In a school database, define primary key and foreign key with examples.', 2, 'StudentID uniquely identifies each student in STUDENT, so it can be its primary key (1). ClassID in STUDENT references the key in CLASS and can be a foreign key (1).'),
 'u3-ch9': ('Contrast Entry Required and Default Value using a student table.', 2, 'Entry Required set to Yes prevents a missing value, e.g. for StudentName (1). Default Value supplies an initial value, e.g. City set to Delhi, which can be changed (1).'),
 'u3-ch10': ('Explain a class-to-students relationship, referential integrity and two cascade actions.', 4, 'One class can have many students: one-to-many (1). Referential integrity prevents a non-null student ClassID from referring to a nonexistent class key (1). Update cascade propagates changes to referenced keys (1). Delete cascade removes related child records when the parent is deleted; use cautiously (1).'),
-'u3-ch11': ('For STUDENT(StudentID, Name, Marks), write SQL to show names and marks of students scoring at least 75, highest score first.', 2, 'SELECT Name, Marks FROM STUDENT WHERE Marks >= 75 ORDER BY Marks DESC; Award 1 for correct selected columns and filter, 1 for descending order.'),
+'u3-ch11': ('In Base Design View, describe a query showing student names and marks for scores of at least 75, highest first.', 2, 'Select Name and Marks, with Marks >= 75 as the criterion (1). Set descending sort on Marks and check the result includes 75 and higher scores (1).'),
 'u3-ch12': ('Choose a database object for entering student records and another for a printable summary. Explain each.', 2, 'A form provides a user-friendly interface for entering or editing records (1). A report formats retrieved data into a structured presentation suitable for printing (1).'),
 'u4-ch13': ('A corridor has a spill beside a damaged power cable. Give two safe actions.', 2, 'Keep people away and report or secure the hazardous area according to workplace procedure (1). Have the electrical supply isolated safely by an authorised person; do not touch exposed conductors or approach with water (1).'),
 'u4-ch14': ('Suggest four ways to reduce strain during computer work.', 4, 'Use an adjustable supportive chair and neutral posture (1). Position the screen at a comfortable distance and height (1). Reduce glare and ensure suitable lighting (1). Take regular breaks, including looking away from the screen (1).'),
@@ -64,7 +64,7 @@ MCQS = [
 ], [
 ('Which field property prevents a missing entry?', ['Default Value alone', 'Font Size', 'Entry Required set to Yes', 'Column Width'], 'Entry Required set to Yes'),
 ('A child record refers to a nonexistent parent key. Which rule should prevent this?', ['Text wrapping', 'Referential integrity', 'Page numbering', 'Image transparency'], 'Referential integrity'),
-('Which SQL clause filters rows to Marks >= 75?', ['ORDER BY Name', 'WHERE Marks >= 75', 'SELECT ALL TABLES', 'GROUP EVERY ROW'], 'WHERE Marks >= 75'),
+('Which query criterion includes marks of at least 75?', ['<75', '>=75', '=74', '>100'], '>=75'),
 ('Which database object is intended for a formatted printable summary?', ['Report', 'Macro recorder', 'Cell style', 'Slide transition'], 'Report'),
 ], [
 ('Which is an ergonomic risk?', ['Neutral posture', 'Supported back', 'Repeated work with a bent wrist', 'Regular breaks'], 'Repeated work with a bent wrist'),

@@ -40,7 +40,7 @@ SHORT = {"pa-u1":"U1 · Communication-II","pa-u2":"U2 · Self-Management-II","pa
 "u4-ch14":"Ch 14 · Quality + Ergonomics","u4-ch15":"Ch 15 · Accidents & Emergencies"}
 
 def sidebar(active, prefix=""):
-    ch = "chapters/" if prefix == "" else ""
+    ch = prefix + "chapters/"
     parts = ['<aside class="sidebar">', "<h3>Navigate</h3>"]
     for href, label in [("index.html", "🏠 Home"), ("syllabus.html", "🗺️ Syllabus & Pattern")]:
         cls = ' class="active"' if href == active else ""
