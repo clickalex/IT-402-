@@ -1,11 +1,9 @@
-# Unit 1 — Digital Documentation (Advanced)
+# Unit 1 — Digital Documentation, Writer (8 marks)
 
-## Chapter checklist
-- Styles: paragraph, character, page, list and table styles; direct formatting versus named styles.
-- Images: insert, resize proportionally, anchor, wrap, caption and accessible description.
-- Long documents: heading hierarchy, automatic table of contents, update and navigation.
-- Templates: reusable `.ott` starting documents, template categories and consistent branding.
-- Track Changes: record, review, accept/reject and comment workflow.
+## Chapters (one page each)
+- `chapters/u1-ch1-styles.html` — Ch 1 Styles: 6 categories, F11, Fill Format, create/update/load.
+- `chapters/u1-ch2-images.html` — Ch 2 Images: 4 methods, embed vs link, group, anchor/arrange/wrap.
+- `chapters/u1-ch3-toc-templates-track.html` — Ch 3: ToC lifecycle, .ott verbs, 5-step review cycle.
 
 ## Assessment focus
-Students should be able to explain why styles make a document maintainable and demonstrate menu paths in LibreOffice Writer.
+Why styles make documents maintainable; exact Writer menu paths + F11 / Ctrl+Alt+C.

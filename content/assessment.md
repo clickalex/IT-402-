@@ -1,7 +1,9 @@
 # Assessment and revision
 
-- Theory preparation: Section A objective practice and Section B definition, comparison, procedure and case-study answers.
-- Practical preparation: 5 Writer, 5 Calc and 5 Base tasks; save editable files and PDF evidence.
-- Project: problem, objectives, method, data design, outputs, reflection and references. Never use real private data.
-- Viva: answer the purpose, menu path, expected result and one precaution for each feature.
-- Revision: use the two-hour sample timer, chapter completion checkboxes and printable cheat sheet.
+- Theory (50): Section A objective 24 (attempt 4/6 + 20/24) + Section B subjective 26
+  (3×2 employability + 4×2 subject short + 3×4 subject long). See `syllabus.html`.
+- Question bank: `question-bank.html` — 5 unit quizzes (50 MCQs), 100 objectives, rapid-fire, 25 short + 14 long models, 2 sample papers + timer; 20 additional original trend-informed written questions with marking points, also placed on their chapter pages. Trends use official SQPs, not board-frequency predictions.
+- Practical (50): `practical.html` — 25 tasks (W/C/D + M1 mixed), mock exam, troubleshooting, project, 50 viva Qs. File: `IT402_YourName/` with editable + PDF copies.
+- Revision: `revision.html` — printable cheat sheet (paths, shortcuts, numbers,
+  keys, answer frames, night-before checklist).
+- Progress: 20 per-chapter checkboxes + per-unit bars on `index.html`.

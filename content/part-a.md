@@ -1,11 +1,11 @@
-# Part A — Employability Skills-II
+# Part A — Employability Skills-II (10 marks)
 
-## Units
-1. Communication Skills-II: sender, message, medium, receiver, feedback, active listening, barriers and formal writing.
-2. Self-Management Skills-II: SMART goals, motivation, stress management, time planning, independent work and feedback.
-3. ICT Skills-II: hardware/software, files and folders, backups, safe internet use, digital documentation and privacy.
-4. Entrepreneurial Skills-II: opportunity, initiative, resources, calculated risk, value proposition and ethical customer service.
-5. Green Skills-II: sustainable development, energy saving, paper reduction, repair/reuse and authorised e-waste disposal.
+## Chapters (one page each)
+1. `chapters/pa-u1-communication.html` — U1 Communication-II (2): cycle, 7 Cs, barriers, feedback.
+2. `chapters/pa-u2-self-management.html` — U2 Self-Management-II (3): stress, SMART, time, OCEAN.
+3. `chapters/pa-u3-ict.html` — U3 ICT-II (1): OS, files/extensions, maintenance, cyber safety.
+4. `chapters/pa-u4-entrepreneurial.html` — U4 Entrepreneurial-II (3): vs employee, qualities, myths, plan.
+5. `chapters/pa-u5-green.html` — U5 Green-II (1): Brundtland, pillars, green economy/jobs, 4 Rs.
 
-## Teaching note
-Every unit is connected to the Domestic Data Entry Operator role: communicate clearly, plan accurate work, protect records, solve customer problems and reduce environmental impact.
+## Paper lens
+Q1 objective (any 4/6 = 4) + short answers (any 3/5 × 2 = 6), 20–30 words each.
