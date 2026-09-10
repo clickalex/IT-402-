@@ -1,7 +1,11 @@
 # Assessment and revision
 
-- Theory preparation: Section A objective practice and Section B definition, comparison, procedure and case-study answers.
-- Practical preparation: 5 Writer, 5 Calc and 5 Base tasks; save editable files and PDF evidence.
-- Project: problem, objectives, method, data design, outputs, reflection and references. Never use real private data.
-- Viva: answer the purpose, menu path, expected result and one precaution for each feature.
-- Revision: use the two-hour sample timer, chapter completion checkboxes and printable cheat sheet.
+- Theory (50): Section A objective 24 (attempt 4/6 + 20/24) + Section B subjective 26
+  (3×2 employability + 4×2 subject short + 3×4 subject long). See `syllabus.html`.
+- Question bank: `question-bank.html` — 12-MCQ interactive quiz, 60 objectives,
+  short + long model answers, full 50-mark sample paper + 2-hour timer.
+- Practical (50): `practical.html` — 15 tasks (W1–W6 / C1–C6 / D1–D6), project
+  structure, 30 viva Qs. File: `IT402_YourName/` with editable + PDF copies.
+- Revision: `revision.html` — printable cheat sheet (paths, shortcuts, numbers,
+  keys, answer frames, night-before checklist).
+- Progress: 20 per-chapter checkboxes + per-unit bars on `index.html`.

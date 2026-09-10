@@ -1,8 +1,9 @@
-# Unit 4 — Workplace Health, Safety and Security
+# Unit 4 — Healthy, Safe & Secure Environment (10 marks)
 
-## Chapter checklist
-- Physical, electrical, fire, digital and psychosocial hazards.
-- Risk prevention, reporting, passwords, privacy, malware awareness and screen locking.
-- Ergonomic posture, screen distance of about 50–70 cm and the 20-20-20 eye-break rule.
-- Quality assurance versus quality control; checklists reduce data-entry errors.
-- Emergency response: protect, alert, evacuate/help, report; use the emergency numbers taught by the school/curriculum.
+## Chapters (one page each)
+- `chapters/u4-ch13-hss.html` — Ch 13: defs, policies, reasons, hazard gallery, lifting, hierarchy.
+- `chapters/u4-ch14-quality-ergonomics.html` — Ch 14: air/water/cleanliness, ergonomics numbers, pairs, cautions.
+- `chapters/u4-ch15-accidents-emergencies.html` — Ch 15: 5 rules, accidents, evacuation ×7, fire+PASS, electrical ×6.
+
+## Numbers to memorise
+50–70 cm · 20-20-20 · 90° knees · 101 / 100 / 102 / 108 · PASS · F-H-O triangle.

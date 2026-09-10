@@ -1,11 +1,10 @@
-# Unit 2 — Electronic Spreadsheet (Advanced)
+# Unit 2 — Electronic Spreadsheet, Calc (10 marks)
 
-## Chapter checklist
-- Scenarios store alternative input sets for what-if analysis.
-- Goal Seek changes one variable to reach a formula target.
-- Macros automate repeatable actions; macro security and trusted sources matter.
-- Relative references move when copied; absolute references use `$`; mixed references lock one dimension.
-- Linking connects sheets/workbooks; comments, protection, version names and review support collaboration.
+## Chapters (one page each)
+- `chapters/u2-ch4-scenarios-goal-seek.html` — Ch 4: consolidate, subtotals (sort first), scenarios, Goal Seek F-T-V, Solver.
+- `chapters/u2-ch5-macros.html` — Ch 5: record/run/organise, My Macros, Function, arguments, security.
+- `chapters/u2-ch6-linking.html` — Ch 6: sheet refs, external refs, hyperlinks, relative/absolute, F4.
+- `chapters/u2-ch7-share-review.html` — Ch 7: share, conflicts, record/comments, Manage, merge vs compare.
 
 ## Assessment focus
-Always identify the formula cell, target value and variable cell in Goal Seek answers. Explain both the productivity benefit and security precaution of macros.
+Formula cell + target + variable in Goal Seek; macro benefit + security precaution.

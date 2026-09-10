@@ -1,0 +1,66 @@
+# IT-402 Content & Site Audit — September 2026
+
+Scope: full static study hub for CBSE Class 10 IT-402 (2026–27), LibreOffice-only.
+Goal of this pass: **more detail everywhere + one page per chapter (20 pages).**
+
+## 1. What the audit found (before)
+
+| # | Finding | Severity |
+|---|---|---|
+| 1 | Theory chapters were ~200–400 words each with generic filler Q&A repeated verbatim across chapters (“What is one benefit? It improves consistency…”) | High |
+| 2 | Progress counter said “15 chapters” but the syllabus has 20 examinable units (Part A ×5 + Ch 1–15) | Medium |
+| 3 | `question-bank.html` had only 4 MCQs / 4 short / ~2 long answers — far below a usable bank | High |
+| 4 | `practical.html` listed 15 tasks as one-liners; viva answers were 2–4 words | Medium |
+| 5 | `revision.html` / `syllabus.html` were minimal (~250 words each), no paper pattern detail | Medium |
+| 6 | `book-ch1-5.html` duplicated Chapters 1–5 with no cross-links (two sources of truth) | Low |
+| 7 | Search index covered only 11 pages + a few anchors; links would break from subfolders | Low |
+| 8 | `content/*.md` outlines were ~80-word stubs; deep notes existed only inside the ZIP | Low |
+
+Total site content before: **~12,400 words** across 11 HTML pages.
+
+## 2. What changed (after)
+
+- **20 chapter pages** in `chapters/` (Part A U1–U5 + Ch 1–15), each ~800–1,400
+  words with: marks lens, visual summary diagram (CSS/SVG), deep concepts with
+  comparison tables, exact LibreOffice menu paths + `<kbd>` shortcuts, memory
+  tricks, mistakes to avoid, exam Q&A (5+ one-mark, 3+ two-mark, 1–2 four-mark
+  with models), hands-on task, prev/next links, and a completion checkbox.
+- **Unit hubs** (`part-a.html`, `unit1-4`) rebuilt as navigators: chapter cards,
+  quick-path tables, interactive final checklists, prev/next unit flow.
+- **`question-bank.html`**: 12-question interactive MCQ quiz with instant feedback,
+  60 unit-wise objectives with answers, 13 short + 7 long model answers, full
+  50-mark sample paper with answer key, 2-hour timer.
+- **`practical.html`**: full W1–W6 / C1–C6 / D1–D6 practicals with steps,
+  file-presentation tips, project structure, 30 viva Qs, 1-week prep plan.
+- **`syllabus.html`**: complete marks table (2/3/1/3/1 + 8/10/12/10), Section A/B
+  pattern, school-based 50 split, golden rules, study route.
+- **`revision.html`**: expanded cheat sheet — all paths, shortcuts, DBMS keys,
+  numbers (50–70, 20-20-20, PASS, 101/102/108), answer frames, checklists.
+- **`index.html`**: 20-chapter dashboard with per-unit progress bars + chapter links.
+- **Search/theme/progress JS**: 31-entry index (works from root and `chapters/`
+  via relative prefix), 20-chapter progress, per-unit bars, persistent checklists,
+  `/` keyboard shortcut, mobile sidebar auto-close.
+- **CSS**: chapter nav groups, SVG figure theme, answer/checklist/banner styles,
+  themed chapter rails, print-friendly (existing print rules kept).
+- **Sources preserved**: ZIP notes imported to `content/source/`; generators in
+  `tools/` (`build.py`, `hubs1.py`, `hubs2.py`) reproduce all pages.
+- **Legacy book** kept for printing, clearly badged with links to detailed chapters.
+
+Total site content after: **~31,600 words** across 31 HTML pages (2.5×).
+
+## 3. Verification (this pass)
+
+- [x] Internal link audit: **1,018 links, 0 broken** (script in history)
+- [x] Same-page anchor audit: **0 dangling anchors**
+- [x] `node --check assets/js/app.js`: **valid**
+- [x] No external dependencies (offline-friendly); no MS Office paths in procedures
+- [x] Every chapter page has: diagram, Q&A bank, practical task, prev/next, checkbox
+- [x] Print stylesheet hides nav/chrome; revision page prints as cheat sheet
+
+## 4. Known limitations / next steps
+
+- Diagrams are lightweight CSS/SVG by design (offline, no image assets).
+- Quiz distractors are original simplifications — teachers should sanity-check
+  wording against the latest CBSE sample paper.
+- If CBSE issues a curriculum circular, update `content/source/` + `tools/extras.py`
+  and regenerate; then refresh `syllabus.html` weightage.

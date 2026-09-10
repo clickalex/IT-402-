@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="CBSE Class 10 IT 402 2026-27: Chapter 6 · Linking Spreadsheet Data">
+<title>Ch 6 · Linking Data · IT 402</title>
+<link rel="stylesheet" href="../assets/css/styles.css">
+</head>
+<body>
+<header class="topbar">
+<button class="menu-btn" aria-label="Open navigation">☰</button>
+<a class="brand" href="../index.html">IT<span>402</span> Study Hub</a>
+<div class="search"><input id="siteSearch" type="search" placeholder="Search 20 chapters…  ( / )" aria-label="Search">
+<div id="searchResults"></div></div>
+<button class="theme-btn" aria-label="Toggle dark mode">☼</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+<h3>Navigate</h3>
+<a href="../index.html">🏠 Home</a>
+<a href="../syllabus.html">🗺️ Syllabus & Pattern</a>
+<details class="navgroup"><summary>Part A · Employability (10)</summary>
+<a href="pa-u1-communication.html">U1 · Communication-II</a>
+<a href="pa-u2-self-management.html">U2 · Self-Management-II</a>
+<a href="pa-u3-ict.html">U3 · ICT Skills-II</a>
+<a href="pa-u4-entrepreneurial.html">U4 · Entrepreneurial-II</a>
+<a href="pa-u5-green.html">U5 · Green Skills-II</a>
+</details>
+<details class="navgroup"><summary>Unit 1 · Writer (8)</summary>
+<a href="u1-ch1-styles.html">Ch 1 · Styles</a>
+<a href="u1-ch2-images.html">Ch 2 · Images</a>
+<a href="u1-ch3-toc-templates-track.html">Ch 3 · ToC + Templates + Track</a>
+</details>
+<details class="navgroup" open><summary>Unit 2 · Calc (10)</summary>
+<a href="u2-ch4-scenarios-goal-seek.html">Ch 4 · Scenarios + Goal Seek</a>
+<a href="u2-ch5-macros.html">Ch 5 · Macros</a>
+<a href="u2-ch6-linking.html" class="active">Ch 6 · Linking Data</a>
+<a href="u2-ch7-share-review.html">Ch 7 · Share & Review</a>
+</details>
+<details class="navgroup"><summary>Unit 3 · DBMS (12)</summary>
+<a href="u3-ch8-dbms-intro.html">Ch 8 · DBMS Intro</a>
+<a href="u3-ch9-base-tables.html">Ch 9 · Base Tables</a>
+<a href="u3-ch10-relationships.html">Ch 10 · Relationships</a>
+<a href="u3-ch11-queries.html">Ch 11 · Queries</a>
+<a href="u3-ch12-forms-reports.html">Ch 12 · Forms & Reports</a>
+</details>
+<details class="navgroup"><summary>Unit 4 · Safety (10)</summary>
+<a href="u4-ch13-hss.html">Ch 13 · HSS at Workplace</a>
+<a href="u4-ch14-quality-ergonomics.html">Ch 14 · Quality + Ergonomics</a>
+<a href="u4-ch15-accidents-emergencies.html">Ch 15 · Accidents & Emergencies</a>
+</details>
+<a href="../question-bank.html">❓ Question Bank</a>
+<a href="../practical.html">💻 Practical Lab</a>
+<a href="../revision.html">🧠 Revision</a>
+<h3>Progress</h3><div class="progress"><i data-progress></i></div>
+<small data-progress-label>0 of 20 chapters marked complete</small></aside>
+<main class="main">
+<div class="crumbs"><a href="../index.html">Home</a> / <a href="../unit2-calc.html">Unit 2 · Electronic Spreadsheet (Calc)</a> / Ch 6 · Linking Data</div>
+<h1>Chapter 6 · Linking Spreadsheet Data</h1>
+<p class="card u2"><b>Chapter 11 of 20.</b> Deep study page: concepts, exact LibreOffice steps, memory tricks, mistakes to avoid, exam Q&amp;A and a hands-on task. Finish it and tick the box at the bottom.</p>
+<div class="toc"><b>On this page:</b> <a href="#marks-lens">🎯 Marks lens</a> <a href="#deep-concepts">📖 Deep concepts</a> <a href="#tricks">🧠 Tricks</a> <a href="#mistakes">⚠️ Mistakes</a> <a href="#exam-qa">❓ Exam Q&amp;A</a> <a href="#practical-c5">💻 Practical (C5)</a></div>
+<article class="chapter u2">
+<h2 class="section-title" id="visual">🖼️ Visual summary</h2>
+<div class="diagram" role="img" aria-label="Reference syntax examples">
+<div class="node"><code>Sheet2.A1</code><br><small>same file</small></div>
+<div class="node"><code>'file…'#$Sheet1.A1</code><br><small>other file (# = sheet)</small></div>
+<div class="node"><kbd>Ctrl</kbd>+<kbd>K</kbd><br><small>hyperlink</small></div>
+<div class="node"><kbd>F4</kbd><br><small>data sources</small></div></div>
+<p class="cap">Chant: <b>“Sheet-Dot-Cell; File-Hash-Sheet-Dot-Cell.”</b> Right-click (never left-click) to edit a link.</p>
+<h2 class="section-title" id="marks-lens">🎯 Marks lens</h2>
+<p>2–3 marks. Reference syntax + hyperlink types + F4 = favourites.</p>
+<h2 class="section-title" id="deep-concepts">📖 Deep concepts</h2>
+<p><b>1. Multiple sheets:</b> Insert: Insert → Sheet / <code>+</code> tab / right-click tab → Insert Sheet. Rename: double-click tab. Move/Copy: right-click → Move or Copy Sheet (tick <i>Copy</i> for duplicate, even to another file). Colour tabs (right-click → Tab Colour) for clarity. Reference same-file cell: <code>Sheet2.A1</code> or with spaces <code>&#x27;Branch A&#x27;.B2</code>.</p>
+<p><b>2. Reference to other SHEETS (same file):</b></p>
+<ul>
+<li><b>By mouse:</b> type <code>=</code> in target → click source sheet tab → click cell → Enter. (Calc writes <code>=&#x27;Sheet2&#x27;.A1</code> automatically.)
+</li>
+<li><b>By keyboard:</b> type manually: <code>=SUM(Sheet2.A1:A10)</code> or <code>=&#x27;Summary&#x27;.B2*0.1</code>.
+</li>
+<li>Syntax rule: <code>SheetName.CellAddress</code>; quote names with spaces/special chars.
+</li>
+</ul>
+<p><b>3. Reference to another DOCUMENT (external):</b></p>
+<ul>
+<li><b>By mouse:</b> open both files → <code>=</code> in target → switch window → click source cell → Enter. Calc inserts full path: <code>=&#x27;file:///home/user/data.ods&#x27;#$Sheet1.A1</code> (<code>#</code> = sheet separator, <code>$</code> = absolute).
+</li>
+<li><b>By keyboard:</b> type the path manually (error-prone; prefer mouse).
+</li>
+<li>Update: Edit → Links to External Files → Update/Manage/Break. Broken if source moved/renamed → keep files in same folder.
+</li>
+</ul>
+<p><b>4. Hyperlinks (Ctrl+K):</b> Click-to-jump to cell/sheet/file/webpage/email.</p>
+<ul>
+<li><b>Create:</b> Insert → Hyperlink (or Ctrl+K) → left tabs: Internet (URL <code>https://…</code>), Document (sheet/cell/bookmark in file), Mail (email+subject), New Document → set Target + Text → Apply. Link shows blue+underlined; <b>Ctrl+Click to follow</b> in Calc.
+</li>
+<li><b>Relative vs Absolute (classic 2-marker):</b>
+</li>
+</ul>
+<table>
+<tr><th>Type</th><th>Stores</th><th>Example</th><th>Moves well?</th></tr>
+<tr><td>Relative</td><td>Path from current file</td><td><code>../data/sales.ods</code></td><td>✅ Yes (folder moved together)</td></tr>
+<tr><td>Absolute</td><td>Full path/URL</td><td><code>https://site.com/f.ods</code>, <code>C:\docs\f.ods</code></td><td>❌ Breaks if file moves</td></tr>
+</table>
+<p>Default: Tools → Options → Load/Save → General → <i>Save URLs relative…</i>.</p>
+<ul>
+<li><b>Edit/Remove:</b> Right-click → <b>Edit Hyperlink</b> (change target) / <b>Remove Hyperlink</b> (keeps text, kills link) / Open Link. (Don&#x27;t left-click — it follows the link!)
+</li>
+</ul>
+<p><b>5. Link to External Data (Sheet → Link to External Data):</b> Imports LIVE table/range from URL/file (e.g. daily gold price, school notice table). Steps: Sheet → Link to External Data → enter URL/file → pick Available range/table → OK → set refresh (every N minutes on open). Data updates without retyping.</p>
+<p><b>6. Link to Registered Data Sources (F4):</b> LibreOffice can register databases (Base <code>.odb</code>) as global sources. View → Data Sources (<b>F4</b>) → left pane pick registered DB → table/query → drag into Calc (or use Data → Define Range linking). Register new: Tools → Options → LibreOffice Base → Databases → New → point to <code>.odb</code>. <i>Use:</i> payroll DB → salary sheet auto-linked.</p>
+<h2 class="section-title" id="tricks">🧠 Tricks</h2>
+<ul>
+<li>Syntax chant: <b>&quot;Sheet-Dot-Cell; File-Hash-Sheet-Dot-Cell&quot;</b>.
+</li>
+<li>Ctrl+K = linK. F4 = Four = “Find From database”.
+</li>
+<li>Relative = <b>Relative moves with Relatives</b> (folder family moves together safely).
+</li>
+</ul>
+<h2 class="section-title" id="mistakes">⚠️ Mistakes</h2>
+<ul>
+<li>Forgetting quotes around sheet names with spaces.
+</li>
+<li>Left-clicking hyperlink to edit (follows it!) — must RIGHT-click.
+</li>
+<li>Confusing Link to External Data (live import) with plain hyperlink (jump only).
+</li>
+</ul>
+<h2 class="section-title" id="exam-qa">❓ Exam Q&amp;A</h2>
+<div class="qa"><strong>1-mark:</strong><br>“Ctrl+K?” → Hyperlink. “F4?” → Data Sources. “<code>Sheet2.A1</code> is?” → Inter-sheet reference.</div>
+<div class="qa"><strong>2-mark:</strong><br><i>Relative vs absolute hyperlink.</i> → Relative = short portable path (moves safely); Absolute = full URL/path (breaks on move). One example each.</div>
+<div class="qa"><strong>4-mark:</strong><br><i>References + hyperlinks.</i> → Same-sheet (mouse/keyboard + syntax) + external doc reference + hyperlink create/edit/remove + relative/absolute.</div>
+<h2 class="section-title" id="practical-c5">💻 Practical (C5)</h2>
+<p>“Linked Workbooks”: <code>data.ods</code> (raw) + <code>summary.ods</code> (<code>=</code> click-across reference + SUM) → Ctrl+K index sheet → Edit one link, Remove another → F4 drag a Base table → screenshot formulas showing paths.</p>
+<hr>
+<h3>➕ Extra exam Q&amp;A bank</h3>
+<div class="qa"><strong>1-mark: Write a reference to cell B5 of sheet “Branch A”.</strong><br>='Branch A'.B5 (quote names with spaces).</div>
+<div class="qa"><strong>1-mark: In an external reference, what does # separate?</strong><br>The file path from the sheet: 'file…'#$Sheet1.A1.</div>
+<div class="qa"><strong>1-mark: How do you follow vs edit a hyperlink in Calc?</strong><br>Ctrl+Click follows; right-click → Edit/Remove Hyperlink edits (left-click alone follows it!).</div>
+<div class="qa"><strong>2-mark: Relative vs absolute hyperlink.</strong><br>Relative stores a short portable path from the current file (../data/sales.ods) — moves safely with the folder. Absolute stores the full URL/path (https://… or C:\…) — breaks if the file moves.</div>
+<div class="qa"><strong>4-mark (practice): Explain sheet references, external references and hyperlinks.</strong><br>Same file, by mouse: type = → click the sheet tab → click the cell → Enter (Calc writes ='Sheet2'.A1); by keyboard: type SheetName.Cell manually. Other file: open both → = → switch window → click source cell → Enter (full path with # inserted); manage via Edit → Links to External Files. Hyperlinks (Ctrl+K): jump to cell/sheet/file/webpage/email — Internet, Document, Mail tabs; blue + underlined. Live imports differ: Sheet → Link to External Data refreshes tables from URL/file; View → Data Sources (F4) drags registered Base data into Calc.</div>
+<h2 class="section-title">✅ Done? Mark it complete</h2>
+<label class="complete"><input type="checkbox" data-complete="u2-ch6"> Mark “Ch 6 · Linking Data” complete</label>
+</article>
+<nav class="card prevnext"><a href="u2-ch5-macros.html">← Previous: Ch 5 · Macros</a><span style="float:right"><a href="u2-ch7-share-review.html">Next: Ch 7 · Share & Review →</a></span></nav>
+</main>
+</div>
+<button class="backtop" aria-label="Back to top">↑</button>
+<footer class="footer">CBSE Class 10 Information Technology · Subject Code 402 · Session 2026–27<br>LibreOffice-only study hub · 20 chapters · works offline</footer>
+<script src="../assets/js/app.js"></script>
+</body>
+</html>
