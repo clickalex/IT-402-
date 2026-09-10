@@ -2,7 +2,7 @@
 
 > **Source:** `cbseacademic.nic.in` (CBSE Department of Skill Education). SQP = Sample
 > Question Paper, MS = Marking Scheme. These are the papers CBSE itself publishes for
-> practice — board main papers follow the same blueprint. PDFs open on the CBSE site
+> practice — board main papers follow the same blueprint. Historical coverage now reaches 2019–20 (eight SQP documents across seven sessions). These are sample papers, not actual main-board PYQs. PDFs open on the CBSE site
 > (internet needed); the full chapter-wise question bank below works offline.
 
 ## Papers at a glance
@@ -13,6 +13,19 @@
 | 2 | **2024-25** | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum25/SQP_MS_X/402_Information_Tech_SQP.pdf) · 8 pages | [MS PDF](https://cbseacademic.nic.in/web_material/Curriculum25/SQP_MS_X/402_Information_Tech_MS.pdf) · 5 pages | ✅ Current |
 | 3 | **2023-24** | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum24/SQP_MS_X/402_Information_Tech_SQP.pdf) | [MS PDF](https://cbseacademic.nic.in/web_material/Curriculum24/SQP_MS_X/402_Information_Tech_MS.pdf) | ⚠️ Old Unit 4 |
 | 4 | **2022-23** | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum23/SQP_MS_X/402_Information_Tech_SQP.pdf) · 7 pages | [MS PDF](https://cbseacademic.nic.in/web_material/Curriculum23/SQP_MS_X/402_Information_Tech_MS.pdf) | ⚠️ Old Unit 4 |
+
+## Older official papers — extend the evidence to 2019
+
+Original PDF downloads were attempted but failed from this workspace. These are online source links, NOT locally stored PDFs. A local question-topic index is included under Historical evidence; it is not a full transcription. Older marking schemes have not been verified here.
+
+| Session | Official question paper | How to use |
+|---|---|---|
+| 2021–22 Term 1 | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum22/SQP_MS_X/402_Information_Tech_SQP_T1.pdf) | 25 marks / 60 min; Writer, Calc and DBMS basics; legacy mail merge excluded |
+| 2021–22 Term 2 | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum22/SQP_MS_X/402_Information_Tech_SQP_T2.pdf) | 25 marks / 60 min; DBMS useful, old Web Applications filtered |
+| 2020–21 | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum21/SQP_MS_X/402_Information_Tech_SQP.pdf) | 50 marks / 2 hours; use matching topics only |
+| 2019–20 | [SQP PDF](https://cbseacademic.nic.in/web_material/Curriculum20/SQP_BP_X/402_Information_Tech_SQP.pdf) | Legacy syllabus and 3M/5M pattern; selective concept practice only |
+
+Do not use the 2-hour timer for an individual 2021–22 term paper. Older evidence and syllabus caveats appear below the solved bank.
 
 ## Paper 1 — SQP 2025-26 (do this FIRST ⭐)
 

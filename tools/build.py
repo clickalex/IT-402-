@@ -4,7 +4,9 @@ import re, pathlib
 from md import md_blocks, inline
 from tpl import CHAPTERS, BY_ID, SHORT, sidebar, page
 from extras import DIAGRAMS, EXTRA_QA
-from quiz import QUIZZES, CHAPTER_IMG, HUB_IMG, PYQ_ANCHOR
+from trend_practice import chapter_practice, bank_practice, NOTICE
+from html import escape
+from quiz import QUIZ_CHAPTERS, QUIZZES, CHAPTER_IMG, HUB_IMG, PYQ_ANCHOR
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
 SRC = ROOT / "content" / "source"
@@ -40,6 +42,7 @@ def build_chapter(idx):
         body = body.replace("<h2", diag + "\n<h2", 1) if "<h2" in body else diag + "\n" + body
     if cid in EXTRA_QA:
         body += "\n" + EXTRA_QA[cid]
+    body += "\n" + chapter_practice(cid)
     # toc box
     toc_html = '<div class="toc"><b>On this page:</b> ' + " ".join(
         f'<a href="#{a}">{t}</a>' for _, a, t in toc[:14]) + "</div>"
@@ -68,7 +71,8 @@ def build_chapter(idx):
 <h2 class="section-title">✅ Done? Mark it complete</h2>
 <label class="complete"><input type="checkbox" data-complete="{cid}"> Mark “{SHORT[cid]}” complete</label>
 </article>
-<p class="pyqlink">📝 <a href="../pyq.html#{pyq_anchor}">Practise board PYQs from this chapter →</a></p>
+<p><a href="../question-bank.html?chapter={cid}#quiz">Practise this chapter’s MCQs and written questions →</a></p>
+<p class="pyqlink">📝 <a href="../pyq.html#{pyq_anchor}">Practise official SQP questions from this chapter →</a></p>
 <nav class="card prevnext">{prev}<span style="float:right">{nxt}</span></nav>"""
     out = ROOT / "chapters" / fname
     out.write_text(page(f"{SHORT[cid]} · IT 402", f"CBSE Class 10 IT 402 2026-27: {h1}", fname, main, prefix="../"), encoding="utf-8")
@@ -79,12 +83,26 @@ def build_quiz_html():
     for qi, (title, qs) in enumerate(QUIZZES):
         parts.append(f'<div class="quiz"><h3>{title}</h3><p class="quiz-score"><b>Score: 0/0 answered</b> — click an option for instant feedback.</p>')
         for n, (q, opts, ans) in enumerate(qs, 1):
-            parts.append(f'<div class="quiz-question" data-answer="{ans}"><b>{n}. {q}</b>')
+            parts.append(f'<div class="quiz-question" data-chapter="{QUIZ_CHAPTERS[qi][n-1]}" data-answer="{escape(ans, quote=True)}"><b>{n}. {q}</b>')
             for o in opts:
-                parts.append(f'<label><input type="radio" name="q{qi}_{n}" value="{o}"> {o}</label>')
+                parts.append(f'<label><input type="radio" name="q{qi}_{n}" value="{escape(o, quote=True)}"> {escape(o)}</label>')
             parts.append('<p class="feedback"></p></div>')
         parts.append("</div>")
     return "\n".join(parts)
+
+def chapter_selector():
+    options = ['<option value="all">All chapters</option>']
+    for cid, fname, title, *_ in CHAPTERS:
+        options.append(f'<option value="{cid}" data-notes="chapters/{fname}" data-pyq="{PYQ_ANCHOR[cid]}">{escape(title)}</option>')
+    return ('<section class="card" aria-label="Chapter selection">'
+            '<label for="chapter-select"><b>Choose a chapter</b></label> '
+            '<select id="chapter-select">' + ''.join(options) + '</select>'
+            '<p>Filters the 50 interactive MCQs and 20 trend-informed written questions. '
+            'The full-paper and general question-bank sections below stay unchanged.</p>'
+            '<p id="chapter-status" role="status" aria-live="polite"></p>'
+            '<p id="chapter-links" hidden><a id="chapter-notes">Study chapter →</a> · '
+            '<a id="chapter-pyq">Official SQP questions →</a></p></section>')
+
 
 def build_question_bank():
     text = (SRC / "IT-402-Question-Bank-and-Sample-Paper.md").read_text(encoding="utf-8")
@@ -105,16 +123,18 @@ def build_question_bank():
 <div class="timer card"><p>Open a sample paper below, start the timer, and write answers on paper. 30 min Section A + 80 min Section B + 10 min revision.</p>
 <p class="timer-display">02:00:00</p>
 <p><button class="button" id="startTimer">Start</button> <button class="button" id="pauseTimer">Pause</button> <button class="button" id="resetTimer">Reset</button></p></div>"""
-    quiz = f'<h2 class="section-title" id="quiz">🎯 Interactive MCQ quizzes (30 questions · 5 unit quizzes)</h2>\n{build_quiz_html()}'
+    quiz = f'<h2 class="section-title" id="quiz">🎯 Interactive MCQ quizzes ({sum(len(qs) for _, qs in QUIZZES)} questions · {len(QUIZZES)} unit quizzes)</h2>\n<p>{NOTICE}</p>\n{build_quiz_html()}'
     qb_img, qb_alt, qb_cap = HUB_IMG["question-bank.html"]
     qb_fig = f'<figure class="shot"><img src="assets/img/{qb_img}" alt="{qb_alt}" loading="lazy"><figcaption>{qb_cap}</figcaption></figure>'
-    qb_toc_html = '<div class="toc"><b>On this page:</b> <a href="#quiz">Quizzes</a> <a href="#timer">Timer</a> ' + " ".join(f'<a href="#{a}">{t}</a>' for lvl, a, t in qb_toc if lvl == 2) + "</div>"
+    qb_toc_html = '<div class="toc"><b>On this page:</b> <a href="#quiz">Quizzes</a> <a href="#trend-practice">Trend practice</a> <a href="#timer">Timer</a> ' + " ".join(f'<a href="#{a}">{t}</a>' for lvl, a, t in qb_toc if lvl == 2) + "</div>"
     main = f"""<div class="crumbs"><a href="index.html">Home</a> / Question Bank</div>
 <h1>Question bank &amp; sample papers</h1>
-<p class="card"><b>100 one-markers + rapid-fire + 25 short + 14 long answers with models + TWO full 50-mark sample papers.</b> Attempt without notes first. Subjective frame: definition → steps/example → benefit or precaution.</p>
+<p class="card"><b>100 one-markers + rapid-fire + 25 short + 14 long answers with models + TWO full 50-mark sample papers.</b> Plus 20 original trend-informed written questions with model marking points. These quizzes and sample papers are authored practice, not official CBSE papers. Attempt without notes first. Subjective frame: definition → steps/example → benefit or precaution.</p>
 {qb_fig}
 {qb_toc_html}
+{chapter_selector()}
 {quiz}
+{bank_practice()}
 {timer}
 {body}"""
     (ROOT / "question-bank.html").write_text(

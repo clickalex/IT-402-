@@ -47,9 +47,10 @@ def main():
     lib, lib_toc = section("papers.md")
     bank, bank_toc = section("chapterwise.md")
     trends, trends_toc = section("trends.md")
+    historical, historical_toc = section("historical.md")
     toc_html = ('<div class="toc"><b>On this page:</b> <a href="#timer">Timer</a> '
                 + " ".join(f'<a href="#{a}">{t}</a>'
-                           for _, a, t in lib_toc + bank_toc + trends_toc) + "</div>")
+                           for _, a, t in lib_toc + bank_toc + trends_toc + historical_toc) + "</div>")
     timer = """<h2 class="section-title" id="timer">⏱️ Timed PYQ mode (2 hours)</h2>
 <div class="timer card"><p>Open an official SQP from the library, start the timer, and write answers on paper. 30 min Section A + 80 min Section B + 10 min revision — then mark yourself with the MS.</p>
 <p class="timer-display">02:00:00</p>
@@ -59,13 +60,14 @@ def main():
            '<figcaption>PYQ Practice — real CBSE papers, chapter-wise.</figcaption></figure>')
     main_html = f"""<div class="crumbs"><a href="index.html">Home</a> / PYQ Practice</div>
 <h1>PYQ practice — official papers, solved</h1>
-<p class="card"><b>4 official CBSE Sample Papers (2022-23 → 2025-26) with marking schemes, 158 chapter-wise questions with answers, trend tables and a 2-hour timer.</b> Your session's paper is first. Pre-2024 papers: practise Part A + Units 1–3 only (old Unit 4 skipped).</p>
+<p class="card"><b>8 official CBSE sample-paper documents (2019-20 → 2025-26), marking schemes for the four newest papers, 158 solved questions, historical evidence and syllabus-aware trends.</b> Newest paper first. Older papers: use only matching topics; 2019-20 has a different syllabus. Original PDFs are online links, not local downloads.</p>
 {fig}
 {toc_html}
 {timer}
 {lib}
 {bank}
 {trends}
+{historical}
 <nav class="card prevnext"><a href="question-bank.html">← Previous: Question Bank</a><span style="float:right"><a href="practical.html">Next: Practical →</a></span></nav>"""
     (ROOT / "pyq.html").write_text(
         page("PYQ Practice · IT 402", "Official CBSE IT 402 previous year questions chapter-wise with answers, trends and timer", "pyq.html", main_html),

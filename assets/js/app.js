@@ -55,7 +55,7 @@ function init(){
     box.checked=localStorage.getItem(key)==='yes';
     box.addEventListener('change',()=>localStorage.setItem(key,box.checked?'yes':'no'));
   });
-  updateProgress();setupSearch();setupBackTop();setupQuiz();setupTimer();
+  updateProgress();setupSearch();setupBackTop();setupQuiz();setupChapterSelection();setupTimer();
 }
 function allProgress(){
   const all={};
@@ -100,20 +100,57 @@ function setupBackTop(){
   addEventListener('scroll',()=>b.style.display=scrollY>400?'block':'none');
   b.onclick=()=>scrollTo({top:0,behavior:'smooth'});
 }
+function refreshQuizScore(box){
+  const visible=Array.from(box.querySelectorAll('.quiz-question')).filter(q=>!q.hidden);
+  const answered=visible.filter(q=>q.dataset.done);
+  const correct=answered.filter(q=>q.dataset.correct==='1');
+  box.querySelector('.quiz-score').textContent=`Score: ${correct.length}/${answered.length} answered (of ${visible.length} shown)`;
+}
 function setupQuiz(){
-  if(!$('.quiz'))return;
   $$('.quiz').forEach(box=>{
-    let score=0,answered=0;
-    const total=box.querySelectorAll('.quiz-question').length;
-    const s=box.querySelector('.quiz-score');
+    refreshQuizScore(box);
     box.querySelectorAll('.quiz-question').forEach(q=>q.querySelectorAll('input').forEach(inp=>inp.addEventListener('change',()=>{
-      if(q.dataset.done)return;q.dataset.done='1';answered++;
+      if(q.dataset.done)return;
+      q.dataset.done='1';
+      q.dataset.correct=inp.value===q.dataset.answer?'1':'0';
       const fb=q.querySelector('.feedback');
-      if(inp.value===q.dataset.answer){score++;fb.textContent='✓ Correct';fb.style.color='#15803d'}
-      else{fb.textContent='✗ Correct answer: '+q.dataset.answer;fb.style.color='#dc2626'}
-      if(s)s.innerHTML=`<b>Score: ${score}/${answered} answered (of ${total})</b>`;
+      fb.setAttribute('role','status');
+      fb.textContent=q.dataset.correct==='1'?'✓ Correct':'✗ Correct answer: '+q.dataset.answer;
+      fb.style.color=q.dataset.correct==='1'?'#15803d':'#dc2626';
+      q.querySelectorAll('input').forEach(input=>input.disabled=true);
+      refreshQuizScore(box);
     })));
   });
+}
+function setupChapterSelection(){
+  const select=$('#chapter-select');
+  if(!select)return;
+  const apply=()=>{
+    const chapter=select.value;
+    const items=$$('[data-chapter]');
+    items.forEach(item=>item.hidden=chapter!=='all'&&item.dataset.chapter!==chapter);
+    $$('.quiz').forEach(box=>{
+      box.hidden=!Array.from(box.querySelectorAll('.quiz-question')).some(q=>!q.hidden);
+      refreshQuizScore(box);
+    });
+    const shown=items.filter(item=>!item.hidden);
+    const mcqs=shown.filter(item=>item.classList.contains('quiz-question')).length;
+    $('#chapter-status').textContent=`${mcqs} MCQs and ${shown.length-mcqs} written questions shown. Answers are kept while switching chapters.`;
+    $('#chapter-links').hidden=chapter==='all';
+    const option=select.selectedOptions[0];
+    if(chapter!=='all'){
+      $('#chapter-notes').href=option.dataset.notes;
+      $('#chapter-pyq').href='pyq.html#'+option.dataset.pyq;
+    }
+    const url=new URL(location.href);
+    if(chapter==='all')url.searchParams.delete('chapter');
+    else url.searchParams.set('chapter',chapter);
+    history.replaceState(null,'',url);
+  };
+  const initial=new URLSearchParams(location.search).get('chapter');
+  if(Array.from(select.options).some(o=>o.value===initial))select.value=initial;
+  select.addEventListener('change',apply);
+  apply();
 }
 function setupTimer(){
   const display=$('.timer-display');if(!display)return;

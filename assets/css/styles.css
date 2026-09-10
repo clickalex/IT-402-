@@ -53,3 +53,7 @@ pre code{background:none;border:0;color:inherit;padding:0}
 .quiz{margin:18px 0}
 @media(max-width:760px){.hero-grid{flex-direction:column}.hero-img{width:100%;max-width:420px}}
 @media print{.shot{box-shadow:none;max-width:480px}.hero-img{display:none}}
+
+/* Chapter-filtered practice: preserve hidden state across screen and print styles. */
+[hidden]{display:none !important}
+#chapter-select, #part-a-unit{max-width:100%;padding:.65rem;margin:.5rem 0;font:inherit;border:1px solid #94a3b8;border-radius:.5rem}

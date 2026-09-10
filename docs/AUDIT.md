@@ -88,3 +88,43 @@ Total site content after: **~31,600 words** across 31 HTML pages (2.5×).
 - Suitability flags: 2022-23/2023-24 Unit 4 (Web Applications) + mail merge marked ⛔ skip (old syllabus).
 - Note: sandbox has no outbound net, so official PDFs are linked (not vendored); bank works offline.
 - Verify: 32 pages, 1152 links 0 problems, ~42.4k words; node --check app.js OK.
+
+## Historical SQP evidence extension — 2026-09-10
+- Read four additional official Class X SQPs: 2019–20, 2020–21, 2021–22 T1/T2 (all web-reader chunks).
+- Added historical.md: question-topic evidence and parsing/syllabus caveats, rendered on pyq.html.
+- Coverage now eight documents / seven sessions. Comparable broad-topic window: six sessions; 2019–20 kept separate. Terms counted as one session.
+- Removed misleading “Asked every single year” heading. Explicitly distinguish SQP recurrence from main-board frequency/predictions; solved bank unchanged.
+- Original PDF downloads attempted over HTTPS, HTTP and www host; failed (TLS/empty response). No PDF binaries saved, no claim of completed downloads. Historical MS not verified. 2015–18 not covered.
+- Verified generated local links, fragment targets, unique IDs, 101 QA cards + 57 answer blocks; node syntax check passed.
+
+## Trend-informed practice update and site audit — 2026-09-10
+
+### Changes
+- Expanded interactive question-bank quizzes from 30 to 50 MCQs: 10 in each of five unit quizzes. New items target recurring concepts and case-based feature selection; current safety remains covered.
+- Added 20 original written prompts (one per chapter) with suggested 2M/4M marking points. The same source renders the central bank and all 20 chapter pages to avoid answer drift.
+- Clearly labelled authored practice as original, not official PYQ text, official marking schemes or predictions. No legacy presentation/mail-merge/networking questions added.
+- Updated revision guidance, homepage historical-paper count and assessment summary. Corrected chapter links from “board PYQs” to “official SQP questions”. The official solved bank remains 158 items.
+- Added `tools/trend_practice.py` as shared practice source; MCQ heading counts now computed from quiz data rather than hardcoded.
+
+### Audit performed
+- Rebuilt with tools/build.py, hubs1.py, hubs2.py and pyq.py successfully.
+- `python3 tests/audit_site.py`: PASS — 32 generated pages, 1,367 local references, zero missing files/fragments or duplicate IDs; all 20 chapters contain practice.
+- Validated 50 rendered MCQ answer keys against source, four distinct options and exactly one correct option per question; five quizzes of ten questions.
+- Validated 20 central written prompts and unchanged 101 official QA cards + 57 answer blocks.
+- `node --check assets/js/app.js`, Python compileall and `git diff --check`: PASS.
+- Static/content audit only: no browser interaction or visual-layout test performed. External PDF availability is not asserted; original binary downloads remain blocked as documented above. Historical topic evidence is SQP-based, not main-board exam frequency.
+
+Repeatable audit: `python3 tests/audit_site.py` from repository root after rebuilding.
+
+## Chapter-wise practice selection — 2026-09-10
+- Added a labelled 20-chapter selector plus All chapters on the question bank. Filters 50 MCQs and 20 written trend-practice prompts; full papers/general bank remain visibly labelled as unfiltered.
+- Explicit chapter mapping covers every MCQ (including the linking question inside the mixed safety quiz). Every chapter has at least one MCQ and its written prompt.
+- Hides empty quiz groups, updates visible-question score/counts, retains answers across chapter changes, and locks answered radio groups to prevent answer/score disagreement.
+- Supports shareable `?chapter=<short-id>` URLs, chapter-note/SQP links and direct practice links from all chapter pages. Invalid chapter values fall back to All chapters.
+- Static audit PASS: 32 pages, 1,387 local references, zero errors; 70 tagged questions, 21 selector options, valid chapter mappings. JavaScript syntax and diff whitespace checks PASS. Browser interaction/visual testing not performed.
+
+## Part A unit-wise entry point — 2026-09-10
+- Updated the Employability Skills hub with an accessible five-unit GET-form selector opening the corresponding question-bank filter. Selection submission does not require JavaScript; filtering uses the existing bank script.
+- Added MCQ/written-practice and official SQP deep links to all five cards; updated topic guidance to match the historical review without predicting marks.
+- Removed unexplained unit-level numbers from this hub to avoid implying a guaranteed marks split; retained the 10-mark Part A pattern and all five study/checklist sections.
+- Audit PASS: 32 pages, 1,398 local references, no broken local targets; verified all five selector options and practice/SQP links. JS syntax and diff checks pass. No browser visual test performed.

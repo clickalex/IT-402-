@@ -1,6 +1,32 @@
 # PYQ Trends — what CBSE repeats
 
-## Asked every single year (master these first ⭐)
+## Evidence scope and counting rules
+
+This is an **official sample-paper review, not a board-exam frequency study or prediction**. Coverage: eight SQP documents across seven sessions, 2019–20 through 2025–26. The two 2021–22 terms count as one session, not two independent full papers. No verified 2015–18 papers or main-board papers are included in these counts.
+
+The 2019–20 syllabus and long-answer marks differ substantially; keep it as legacy corroboration, outside the comparable-session denominator. For broad Units 1–3 topics, the comparison below spans six sessions (2020–21 through 2025–26). A hit means at least one question in a broad topic family, not equal marks or identical questions. Current safety-unit priority rests mainly on 2024–25 and 2025–26. Absence from a topic index is not proof a topic was not assessed.
+
+See **Historical evidence** on this page for the older question numbers, source PDFs and extraction caveats. The existing solved bank remains 158 questions from the four newer SQPs; historical indexes are not additional solved questions.
+
+## Longer-window recurrence — question-number evidence
+
+| Broad topic | 2019–20 legacy evidence | 2020–21 evidence | 2021–22 evidence | Combined reading with 2022–26 table |
+|---|---|---|---|---|
+| Styles | Not used | Q17 | T1 Q7, Q11, Q28 | Present in all 6 comparable sessions |
+| Image positioning/editing | Q30 wrapping | Q2(vi), Q3(ii), Q12 | T1 Q9, Q14, Q26, Q29 | Present in all 6 comparable sessions |
+| Templates / ToC / document review | Not used | Q3(v), templates | T1 Q10, templates | Broad family in all 6; not proof ToC occurs every year |
+| What-if / aggregation tools | Not used | Q2(v), Q4(i–ii), Q18 | T1 Q8, Q13, Q18–19 | Broad family in all 6; individual tools vary |
+| Macros | Not used | Q13 | T1 Q30 | At least 5/6; newer table has no 2023–24 hit |
+| Hyperlinks / linking | Not used | Q4(iii), Q11 | T1 Q17, Q20 | Present in all 6 comparable sessions |
+| Spreadsheet sharing / review | Not used | Q4(v) | T1 Q31 | Broad family in all 6 |
+| DBMS foundations / keys / models | Q28, Q33 | Q4(vi), Q15, Q20 | T1 Q21–22, Q32 | Present in all 6 comparable sessions |
+| Relationships / integrity | Q33, FK | Q5(v), Q15 | T2 Q11, Q17 | At least 5/6; do not call it annual |
+| Queries / SQL | Q20, Q35, Q39 | Q5(i), Q21 | T2 Q21 | Broad family in all 6; SQL code is not guaranteed |
+| Forms / reports | Not used | No indexed hit | T2 Q12, reports | Intermittent; not an annual guarantee |
+
+**Study implication:** prioritise the recurring broad Writer, Calc and DBMS skills, but revise all current chapters. More historical papers strengthen evidence of repetition, not the probability of a particular future question.
+
+## Recent four-session detail (SQPs, not main-board papers)
 
 | Topic | 22-23 | 23-24 | 24-25 | 25-26 | Study |
 |---|---|---|---|---|---|
@@ -29,7 +55,7 @@
 | 2023-24 | ToC characteristics (U1) · Scenarios + example (U2) · ~~Online threats~~ (old U4 ⛔) · Referential integrity (U3) · SQL datesheet queries (U3) |
 | 2022-23 | Scenario/GoalSeek/Solver/Subtotal notes (U2) · ~~Mail merge~~ (removed ⛔) · SQL sales queries (U3) · DBMS chemist case study (U3) · ~~Internet/Networks~~ (old U4 ⛔) |
 
-## Examiner's favourite question shapes
+## Question shapes observed in the recent SQPs
 
 1. **Case-based MCQ:** a named person + situation → pick the feature (Ria/Fill Format, Ritika/Goal Seek EMI, Sonia/workplace). Always map situation → feature name.
 2. **Assertion-Reason:** 2025-26 asked macro-as-function. Practise A/R on: styles→ToC, Goal Seek direction, PK rules, RI.

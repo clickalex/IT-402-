@@ -85,3 +85,17 @@ PYQ_ANCHOR = {
   "u3-ch8": "C-Ch8", "u3-ch9": "C-Ch9", "u3-ch10": "C-Ch10", "u3-ch11": "C-Ch11",
   "u3-ch12": "C-Ch12", "u4-ch13": "C-Ch13", "u4-ch14": "C-Ch14", "u4-ch15": "C-Ch15",
 }
+
+# Enrich each unit without treating original practice as official PYQs.
+from trend_practice import MCQS
+for (_, questions), additions in zip(QUIZZES, MCQS):
+    questions.extend(additions)
+
+# Parallel to each quiz's question order (including the four trend additions).
+QUIZ_CHAPTERS = [
+    ['pa-u1','pa-u2','pa-u3','pa-u4','pa-u5','pa-u3','pa-u1','pa-u2','pa-u4','pa-u5'],
+    ['u1-ch3','u1-ch1','u1-ch1','u1-ch2','u1-ch3','u1-ch3','u1-ch1','u1-ch2','u1-ch2','u1-ch3'],
+    ['u2-ch4','u2-ch4','u2-ch4','u2-ch5','u2-ch6','u2-ch7','u2-ch4','u2-ch4','u2-ch5','u2-ch7'],
+    ['u3-ch8','u3-ch8','u3-ch10','u3-ch9','u3-ch11','u3-ch12','u3-ch9','u3-ch10','u3-ch11','u3-ch12'],
+    ['u4-ch14','u4-ch15','u4-ch15','u4-ch14','u4-ch15','u2-ch6','u4-ch14','u4-ch13','u4-ch15','u4-ch14'],
+]

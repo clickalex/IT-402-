@@ -9,22 +9,39 @@ PARTA = """<div class="crumbs"><a href="index.html">Home</a> / Part A · Employa
 <h1>Part A · Employability Skills (10 marks)</h1>
 <p class="card part-a">Workplace skills for a Domestic Data Entry Operator. Paper: <b>Q1 objective (any 4/6 = 4)</b> + <b>short answers (any 3/5 × 2 = 6)</b>. Each unit below has its own detailed page — open it, study, tick complete.</p>
 <figure class="shot"><img src="assets/img/part-a-team.jpg" alt="Team communicating in an office" loading="lazy"><figcaption>Part A — the human skills behind every data operator.</figcaption></figure>
+<section class="card" aria-label="Part A unit selection">
+<h2>Choose a Part A unit to practise</h2>
+<form action="question-bank.html#quiz" method="get">
+<label for="part-a-unit"><b>Employability unit</b></label>
+<select id="part-a-unit" name="chapter">
+<option value="pa-u1">U1 · Communication Skills-II</option>
+<option value="pa-u2">U2 · Self-Management Skills-II</option>
+<option value="pa-u3">U3 · ICT Skills-II</option>
+<option value="pa-u4">U4 · Entrepreneurial Skills-II</option>
+<option value="pa-u5">U5 · Green Skills-II</option>
+</select>
+<button class="button" type="submit">Open selected practice →</button>
+</form>
+<p>Opens the question bank filtered to your selected unit: interactive MCQs and a written question with model marking points. The bank’s general questions and full papers remain unfiltered.</p>
+</section>
+<div class="card"><b>Trend-informed priorities:</b> communication barriers and feedback; stress and SMART goals; OS, maintenance and data protection; entrepreneurial qualities, myths and functions; sustainability and practical green actions.
+<p>These priorities come from the <a href="pyq.html">2019–26 official SQP review</a>, not predictions. Practise all five units. Individual unit marks vary across papers; the 10-mark Part A total is not a fixed per-unit split. New practice questions are authored exercises, not official PYQs.</p></div>
 <div class="cards">
-<div class="card"><h3>U1 · Communication-II (2)</h3>
+<div class="card"><h3>U1 · Communication-II</h3>
 <p>Cycle, methods, 7 Cs, barriers, feedback, active listening.</p>
-<p><b>Hot Qs:</b> 7 Cs match · linguistic barrier · feedback.</p><a href="chapters/pa-u1-communication.html">Study U1 →</a></div>
-<div class="card"><h3>U2 · Self-Management-II (3 ⭐)</h3>
+<p><b>Practice focus:</b> 7 Cs match · linguistic barrier · feedback.</p><a href="chapters/pa-u1-communication.html">Study U1 →</a><p><a href="question-bank.html?chapter=pa-u1#quiz">Unit-wise MCQs + written practice →</a> · <a href="pyq.html#C-U1">Official SQP questions →</a></p></div>
+<div class="card"><h3>U2 · Self-Management-II</h3>
 <p>Stress, SMART goals, time management, OCEAN, grooming.</p>
-<p><b>Hot Qs:</b> expand SMART · stress techniques · case-study.</p><a href="chapters/pa-u2-self-management.html">Study U2 →</a></div>
-<div class="card"><h3>U3 · ICT Skills-II (1)</h3>
+<p><b>Practice focus:</b> expand SMART · stress techniques · case-study.</p><a href="chapters/pa-u2-self-management.html">Study U2 →</a><p><a href="question-bank.html?chapter=pa-u2#quiz">Unit-wise MCQs + written practice →</a> · <a href="pyq.html#C-U2">Official SQP questions →</a></p></div>
+<div class="card"><h3>U3 · ICT Skills-II</h3>
 <p>OS, files &amp; extensions, maintenance, cyber safety, email.</p>
-<p><b>Hot Qs:</b> .odt/.ods/.odb · backup · Win+L.</p><a href="chapters/pa-u3-ict.html">Study U3 →</a></div>
-<div class="card"><h3>U4 · Entrepreneurial-II (3 ⭐)</h3>
+<p><b>Practice focus:</b> OS role · maintenance · backup · safe access.</p><a href="chapters/pa-u3-ict.html">Study U3 →</a><p><a href="question-bank.html?chapter=pa-u3#quiz">Unit-wise MCQs + written practice →</a> · <a href="pyq.html#C-U3">Official SQP questions →</a></p></div>
+<div class="card"><h3>U4 · Entrepreneurial-II</h3>
 <p>Entrepreneur vs employee, qualities, myths, business plan.</p>
-<p><b>Hot Qs:</b> difference table · qualities · myths vs facts.</p><a href="chapters/pa-u4-entrepreneurial.html">Study U4 →</a></div>
-<div class="card"><h3>U5 · Green Skills-II (1)</h3>
+<p><b>Practice focus:</b> difference table · qualities · myths vs facts.</p><a href="chapters/pa-u4-entrepreneurial.html">Study U4 →</a><p><a href="question-bank.html?chapter=pa-u4#quiz">Unit-wise MCQs + written practice →</a> · <a href="pyq.html#C-U4">Official SQP questions →</a></p></div>
+<div class="card"><h3>U5 · Green Skills-II</h3>
 <p>Sustainable development, green economy, green jobs, 4 Rs.</p>
-<p><b>Hot Qs:</b> Brundtland line · green-job example.</p><a href="chapters/pa-u5-green.html">Study U5 →</a></div>
+<p><b>Practice focus:</b> sustainable development · SDGs · practical resource-saving actions.</p><a href="chapters/pa-u5-green.html">Study U5 →</a><p><a href="question-bank.html?chapter=pa-u5#quiz">Unit-wise MCQs + written practice →</a> · <a href="pyq.html#C-U5">Official SQP questions →</a></p></div>
 </div>
 <h2>Part A at a glance</h2>
 <table><tr><th>Unit</th><th>Memorise cold</th><th>Trick</th></tr>
@@ -38,7 +55,7 @@ PARTA = """<div class="crumbs"><a href="index.html">Home</a> / Part A · Employa
 <label class="check"><input type="checkbox"> SMART expanded + 4 stress techniques + OCEAN</label>
 <label class="check"><input type="checkbox"> OS + extensions + backup + password rules</label>
 <label class="check"><input type="checkbox"> Entrepreneur vs employee table + myths vs facts</label>
-<label class="check"><input type="checkbox"> Brundtland exact line + pillars + green jobs</label>
+<label class="check"><input type="checkbox"> Explain sustainable development + pillars + two practical green actions</label>
 <nav class="card prevnext"><a href="syllabus.html">← Previous: Syllabus</a><span style="float:right"><a href="unit1-writer.html">Next: Unit 1 Writer →</a></span></nav>"""
 
 UNIT1 = """<div class="crumbs"><a href="index.html">Home</a> / Unit 1 · Writer</div>
