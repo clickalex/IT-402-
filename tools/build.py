@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
-"""Generate chapters/*.html + question-bank.html + practical.html from Markdown."""
+"""Generate study chapters, chapter practice, mixed revision and practical pages."""
 import re, pathlib
 from md import md_blocks, inline
 from tpl import CHAPTERS, BY_ID, SHORT, sidebar, page
 from extras import DIAGRAMS, EXTRA_QA
 from trend_practice import chapter_practice, bank_practice, NOTICE
 from html import escape
+from practice import build_practice
 from quiz import QUIZ_CHAPTERS, QUIZZES, CHAPTER_IMG, HUB_IMG, PYQ_ANCHOR
 
 ROOT = pathlib.Path(__file__).resolve().parent.parent
@@ -64,6 +65,7 @@ def build_chapter(idx):
     main = f"""<div class="crumbs"><a href="../index.html">Home</a> / <a href="../{unit_file}">{unit_label}</a> / {SHORT[cid]}</div>
 <h1>{h1}</h1>
 <p class="card {theme}"><b>Chapter {num} of 20.</b> Deep study page: concepts, exact LibreOffice steps, memory tricks, mistakes to avoid, exam Q&amp;A and a hands-on task. Finish it and tick the box at the bottom.</p>
+<p><a class="button" href="../practice/{cid}.html">Open this chapter’s questions + MCQs →</a></p>
 {fig}
 {toc_html}
 <article class="chapter {theme}">
@@ -71,7 +73,7 @@ def build_chapter(idx):
 <h2 class="section-title">✅ Done? Mark it complete</h2>
 <label class="complete"><input type="checkbox" data-complete="{cid}"> Mark “{SHORT[cid]}” complete</label>
 </article>
-<p><a href="../question-bank.html?chapter={cid}#quiz">Practise this chapter’s MCQs and written questions →</a></p>
+<p><a href="../practice/{cid}.html">Practise this chapter’s MCQs and written questions →</a></p>
 <p class="pyqlink">📝 <a href="../pyq.html#{pyq_anchor}">Practise official SQP questions from this chapter →</a></p>
 <nav class="card prevnext">{prev}<span style="float:right">{nxt}</span></nav>"""
     out = ROOT / "chapters" / fname
@@ -117,7 +119,7 @@ def build_question_bank():
                   lambda m: f"@@QA@@{m.group(1).strip()}|||{m.group(2).strip()}@@END@@", text)
     body, qb_toc = md_blocks(text)
     def qa_html(m):
-        return f'<div class="qa"><strong>{m.group(1)}</strong><br>{m.group(2)}</div>'
+        return f'<div class="qa"><strong>{m.group(1)}</strong><details class="answer-reveal"><summary>Show answer</summary><div class="model-answer">{m.group(2)}</div></details></div>'
     body = re.sub(r"@@QA@@(.+?)\|\|\|(.+?)@@END@@", qa_html, body, flags=re.S)
     timer = """<h2 class="section-title" id="timer">⏱️ Timed sample-paper mode (2 hours)</h2>
 <div class="timer card"><p>Open a sample paper below, start the timer, and write answers on paper. 30 min Section A + 80 min Section B + 10 min revision.</p>
@@ -128,7 +130,9 @@ def build_question_bank():
     qb_fig = f'<figure class="shot"><img src="assets/img/{qb_img}" alt="{qb_alt}" loading="lazy"><figcaption>{qb_cap}</figcaption></figure>'
     qb_toc_html = '<div class="toc"><b>On this page:</b> <a href="#quiz">Quizzes</a> <a href="#trend-practice">Trend practice</a> <a href="#timer">Timer</a> ' + " ".join(f'<a href="#{a}">{t}</a>' for lvl, a, t in qb_toc if lvl == 2) + "</div>"
     main = f"""<div class="crumbs"><a href="index.html">Home</a> / Question Bank</div>
-<h1>Question bank &amp; sample papers</h1>
+<h1>Mixed revision &amp; sample papers · Legacy archive</h1>
+<p class="warning">This preserved mixed resource is not included in the current question-level syllabus audit. For the current syllabus-mapped chapter sets, use the <a href="question-bank.html">question directory</a> and <a href="syllabus-audit.html">audit report</a>. Historical wording and full-paper conventions may differ.</p>
+<p class="callout tip">Prefer one chapter at a time? <a href="question-bank.html">Choose a chapter for its separate MCQs and written question page →</a></p>
 <p class="card"><b>100 one-markers + rapid-fire + 25 short + 14 long answers with models + TWO full 50-mark sample papers.</b> Plus 20 original trend-informed written questions with model marking points. These quizzes and sample papers are authored practice, not official CBSE papers. Attempt without notes first. Subjective frame: definition → steps/example → benefit or precaution.</p>
 {qb_fig}
 {qb_toc_html}
@@ -137,8 +141,8 @@ def build_question_bank():
 {bank_practice()}
 {timer}
 {body}"""
-    (ROOT / "question-bank.html").write_text(
-        page("Question Bank · IT 402", "IT 402 question bank, quiz and 50-mark sample paper", "question-bank.html", main), encoding="utf-8")
+    (ROOT / "mixed-practice.html").write_text(
+        page("Mixed revision &amp; sample papers · IT 402", "IT 402 question bank, quiz and 50-mark sample paper", "question-bank.html", main), encoding="utf-8")
 
 def build_practical():
     text = (SRC / "IT-402-Practical-File-and-Project-Guide.md").read_text(encoding="utf-8")
@@ -164,5 +168,6 @@ if __name__ == "__main__":
     (ROOT / "chapters").mkdir(exist_ok=True)
     for i in range(len(CHAPTERS)):
         print("chapter", build_chapter(i))
-    build_question_bank(); print("question-bank.html")
+    build_question_bank(); print("mixed-practice.html")
+    build_practice()
     build_practical(); print("practical.html")

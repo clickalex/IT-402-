@@ -4,10 +4,10 @@
 
 ---
 
-# Unit 1: Communication Skills-II (2 marks)
+# Unit 1: Communication Skills-II
 
 ## 🎯 Why it matters
-Fixed 1–2 questions every year. 7 Cs, barriers, feedback = favourite MCQs.
+Practise the 7 Cs, barriers and feedback using workplace examples. The published 2026–27 scheme allocates 2 marks to this unit within the 10-mark Part A total; this does not guarantee a particular question.
 
 ## 📖 Concepts (deep)
 
@@ -73,10 +73,10 @@ Write a formal email to principal requesting leave (Subject + greeting + 3-line 
 
 ---
 
-# Unit 2: Self-Management Skills-II (3 marks ⭐ highest in Part A)
+# Unit 2: Self-Management Skills-II
 
 ## 🎯 Why it matters
-3 marks = usually 2 objective + 1 short answer. Stress + SMART goals asked almost every year.
+Practise stress-management techniques and SMART goals for objective and two-mark answers. Topic recurrence in sample papers is not a guarantee of questions or marks.
 
 ## 📖 Concepts (deep)
 
@@ -129,10 +129,10 @@ Make a 1-week SMART study timetable in Calc (Goal / Measurable target / Deadline
 
 ---
 
-# Unit 3: ICT Skills-II (1 mark)
+# Unit 3: ICT Skills-II
 
 ## 🎯 Why it matters
-Only 1 mark but nearly fixed question — OS, file care, or cyber safety MCQ.
+Explain operating system functions, file care, maintenance and safe access. Prepare both objectives and short answers; do not assume this unit is limited to one mark.
 
 ## 📖 Concepts (deep)
 
@@ -141,7 +141,7 @@ Only 1 mark but nearly fixed question — OS, file care, or cyber safety MCQ.
 **3. Operating System (OS):** Master software; interface between user & hardware; manages files, memory, devices, users. Examples: Windows 11, Ubuntu/Linux, macOS, Android. Functions: file management, process/memory/device management, security (passwords), provides UI (GUI/CLI).
 **4. File management (must-know operations):** Create folder/file, rename (F2), copy (Ctrl+C)/cut/move, paste (Ctrl+V), delete (Del) + Restore from Recycle Bin/Trash, search by name, sort by date/size, check extension (.odt Writer, .ods Calc, .odb Base, .jpg image). Good habits: meaningful names (`IT-Ch8-Notes.odt`), subject-wise folders, no desktop dumping.
 **5. Computer maintenance (any 4):** Disk Cleanup + delete temp files, update OS/software, update + scan antivirus weekly, uninstall unused apps, defragment HDD (not SSD), clean keyboard/screen safely (switched off), proper shutdown (not power cut), regular **backup** (external drive/cloud).
-**6. Security & safety:** Strong password (8+ chars, mix letters/numbers/symbols, different per site), firewall ON, antivirus updated, lock screen (Win+L), log out on shared PCs, don't click unknown links/attachments, verify https + padlock, never share OTP/password, backup important data, avoid pirated software.
+**6. Security & safety:** Long, unique password or passphrase for each account; enable multi-factor authentication where available, firewall ON, antivirus updated, lock screen (Win+L), log out on shared PCs, don't click unknown links/attachments, check the website address carefully (HTTPS encrypts the connection but does not prove a site is trustworthy), never share OTP/password, backup important data, avoid pirated software.
 **7. Email etiquette:** Clear subject (“Leave application – 12 Sept”), polite greeting, short paragraphs, attach before sending + mention attachment, proofread, formal sign-off (Name, Class, Roll No).
 
 ## 🧠 Memory tricks
@@ -158,10 +158,10 @@ Only 1 mark but nearly fixed question — OS, file care, or cyber safety MCQ.
 
 ---
 
-# Unit 4: Entrepreneurial Skills-II (3 marks ⭐)
+# Unit 4: Entrepreneurial Skills-II
 
 ## 🎯 Why it matters
-3 marks, theory-rich. “Entrepreneur vs employee” or “qualities” = classic 2-marker.
+Explain entrepreneur vs employee, entrepreneurial qualities, functions and myths with examples. Prepare the whole unit rather than predicting particular questions.
 
 ## 📖 Concepts (deep)
 
@@ -207,10 +207,10 @@ Only 1 mark but nearly fixed question — OS, file care, or cyber safety MCQ.
 
 ---
 
-# Unit 5: Green Skills-II (1 mark)
+# Unit 5: Green Skills-II
 
 ## 🎯 Why it matters
-1 fixed marker — definition or green-job example. Takes 15 minutes to master fully.
+Explain sustainable development and green jobs, then apply resource-saving actions to school or workplace examples. Questions and marks are not fixed to one definition.
 
 ## 📖 Concepts (deep)
 

@@ -1,0 +1,561 @@
+[
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u2",
+    "row": 9,
+    "before": "Which workplace habit reflects personal hygiene? | Wearing clean clothes and washing hands appropriately | Sharing used towels | Ignoring dirty workwear | Using strong perfume instead of washing | Hygiene protects health and supports professional conduct.",
+    "after": "Which habit demonstrates self-motivation while learning a new skill? | Continuing planned practice without waiting for a reward | Abandoning every difficult step | Waiting for constant reminders | Refusing to review mistakes | Self-motivation helps a learner sustain purposeful effort independently."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u3",
+    "row": 5,
+    "before": "What is phishing? | An attempt to trick someone into revealing sensitive information | Compressing a large folder | Defragmenting a hard disk | Installing a printer driver | Phishing often impersonates a trusted sender to steal credentials or data.",
+    "after": "What is the purpose of an antivirus scan? | Check files for known or suspected malicious software | Organise every folder alphabetically | Increase the monitor size | Replace every operating-system function | Antivirus scanning is part of protecting and maintaining a computer; follow the program’s guidance for detected threats."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u3",
+    "row": 6,
+    "before": "What does HTTPS establish about a connection? | Data is encrypted in transit to that site | The site can never be fraudulent | Every download is harmless | The seller is officially approved | HTTPS protects transport; a deceptive website can also use HTTPS.",
+    "after": "Which desktop component usually shows running applications? | Taskbar | Recycle Bin only | A text-file extension | A document margin | The taskbar helps identify and switch between open applications on common desktop operating systems."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u3",
+    "row": 10,
+    "before": "Which is the safest response to an unexpected request for an OTP? | Refuse and verify through the service's official channel | Share it if the caller sounds polite | Post it in a group chat | Send it with the account password | An OTP is an authentication secret and should not be disclosed to callers.",
+    "after": "Which action removes an unneeded temporary file safely? | Check that it is no longer needed and use an appropriate cleanup procedure | Delete every system folder | Rename it as a backup and assume it is removed | Unplug the computer while saving | Cleanup should remove only suitable unnecessary files without damaging required data or system files."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u4",
+    "row": 4,
+    "before": "A shop earns revenue of ₹9,000 and incurs costs of ₹7,000. What is its profit? | ₹2,000 | ₹16,000 | ₹7,000 | ₹9,000 | Profit equals revenue minus costs: 9,000 minus 7,000 is 2,000.",
+    "after": "Which entrepreneurial activity contributes directly to society? | Meeting local needs and creating work opportunities | Promising that every venture earns a guaranteed profit | Avoiding all responsibility for customers | Refusing to learn any new skill | Entrepreneurship can provide useful goods or services and employment while requiring responsible decisions."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "pa-u5",
+    "row": 10,
+    "before": "How many Sustainable Development Goals were adopted by the UN in 2015? | 17 | 7 | 12 | 27 | The 2030 Agenda contains 17 Sustainable Development Goals.",
+    "after": "Which community practice supports sustainable development? | Collecting rainwater appropriately for suitable uses | Wasting fresh water because rain may return | Burning mixed plastic waste | Discarding repairable equipment immediately | Rainwater harvesting is an example of conserving resources; construction and use must follow suitable local guidance."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u2-ch6",
+    "row": 3,
+    "before": "Which reference keeps both the column and row fixed when copied? | $B$4 | B4 | $B4 | B$4 | Dollar signs fix the column B and row 4 independently.",
+    "after": "What is a useful reason to rename a Calc sheet? | Make its data or purpose easier to identify | Convert it automatically into a database | Remove every formula dependency | Guarantee all links remain correct after any edit | Meaningful sheet names help organise multiple sheets; existing references still need checking."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u2-ch6",
+    "row": 4,
+    "before": "Which reference fixes only the row? | B$4 | $B4 | B4 | $B$4 | B may adjust when copied across columns, while row 4 remains fixed.",
+    "after": "Which source is outside the current spreadsheet document? | A range in a different saved Calc document | A cell on the current sheet | Another sheet in the same workbook | A comment attached to the active cell | Referencing another document creates an external dependency and requires the correct accessible source."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u2-ch6",
+    "row": 5,
+    "before": "When =A1 is copied one column to the right, what does it normally become? | =B1 | =$A$1 | =A2 | =B2 | A relative reference moves by the same offset as the formula.",
+    "after": "Why register an appropriate data source for use with Calc? | Make the source available through the supported data-source workflow | Turn every worksheet into an image | Replace all field names with page numbers | Guarantee that the source can never change | Registered data sources support integration; users must still select and check the intended data."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 1,
+    "before": "Which SQL clause selects rows meeting a condition? | WHERE | ORDER BY | FROM alone | SELECT alone | WHERE filters rows; SELECT chooses expressions and ORDER BY controls ordering.",
+    "after": "Which part of a Base query specifies the conditions records must meet? | Criteria | Report title | Form background | Table filename | Query criteria restrict results to the records relevant to the question."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 5,
+    "before": "Which SQL clause sorts results from highest Marks to lowest? | ORDER BY Marks DESC | ORDER BY Marks ASC | WHERE Marks DESC | FROM Marks DESC | DESC requests descending order for the selected sort expression.",
+    "after": "Which Sort setting displays the highest Marks first in query output? | Descending on Marks | Ascending on Marks | No sort on every field | Sort only by an unrelated field | Descending order arranges the qualifying marks from high to low."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 6,
+    "before": "Which aggregate counts rows when written as COUNT(*)? | COUNT | SUM | AVG | MIN | COUNT(*) counts result rows, including rows that may contain null fields.",
+    "after": "Which query calculation is suitable for finding a total of numeric amounts? | Sum | A picture caption | A field’s font colour | A page margin | A sum adds the intended numeric values; verify the included records and source data."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 7,
+    "before": "Which SQL aggregate finds the mean of non-null Marks values? | AVG(Marks) | SUM(Marks) | MAX(Marks) | COUNT(*) | AVG calculates the arithmetic mean of the non-null values considered.",
+    "after": "Which calculation finds the arithmetic mean of the specified complete numeric scores? | Average | Maximum | Minimum | Sum alone | The average uses the total and count of the included scores; check which records are included."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 8,
+    "before": "Which standard SQL LIKE pattern matches names beginning with A? | 'A%' | '%A' | '_A' | 'A_' | Percent matches any sequence of characters after A. Base's graphical criteria may display different wildcard notation.",
+    "after": "In Base graphical criteria using * as the multiple-character wildcard, which pattern matches names beginning with R? | R* | *R | ?R | R? | R* keeps the initial R and permits any following character sequence. Use the wildcard notation supported by the query interface."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 9,
+    "before": "Which SQL predicate checks for a missing ClassID? | ClassID IS NULL | ClassID = NULL | ClassID = 'NULL' | ClassID > NULL | SQL uses IS NULL to test missing values; equality to NULL is not a true/false equality test.",
+    "after": "A field is needed as a filter but should not be displayed in a Base query result. What should be adjusted? | Clear its Visible/Show setting while retaining its criterion | Delete the source column from the table | Erase every value in the field | Rename the database to hide it | Query output visibility and filtering have separate purposes; the field can supply a criterion without being displayed."
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 10,
+    "before": "Which statement about a basic SELECT query is correct? | It retrieves data without itself changing the stored records | It always deletes the source table | It must update every row | It is a compulsory backup command | SELECT reads data; modification statements such as UPDATE have different purposes.",
+    "after": "What does running a retrieval query normally do? | Displays the records selected by the query without changing their stored values | Deletes every nonmatching source row | Replaces every source name | Removes the database file | Query results are a selected view of data; nonmatching records remain in the source table."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u1",
+    "row": 8,
+    "before": "competitive | A team receives 12 instructions. Four are misunderstood; after feedback, three of those are clarified. How many instructions remain misunderstood, and what does this show about feedback? | 0 | One instruction remains misunderstood: 4 minus 3. Feedback can reveal and reduce misunderstandings, but its presence does not guarantee that every message has been understood.",
+    "after": "competitive | A trainee repeats the instruction accurately but submits the wrong file. Does the accurate repetition prove the communication task was completed successfully? Explain. | 0 | No. Repetition provides evidence of understanding at that point, but the actual submitted file must also be checked. Clarify the required file, identify the misunderstanding or execution error and use specific feedback."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u3",
+    "row": 3,
+    "before": "long | Describe four practices for protecting a shared computer account and its data. | 4 | Use a long unique password and MFA where available (1). Lock the screen when away and sign out when finished (1). Keep software updated and avoid unknown attachments or macros (1). Maintain verified separate backups and restrict access to sensitive files (1).",
+    "after": "long | Describe four practices for maintaining a shared school computer and its files. | 4 | Organise work in meaningful folders (1). Keep recoverable copies of important files (1). Use appropriate antivirus scanning and supported updates (1). Follow safe cleaning and shutdown procedures (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u3",
+    "row": 5,
+    "before": "application | A message from “school support” asks you to enter your password on an unfamiliar HTTPS site. Explain a safe response in four points. | 4 | Do not enter the password or open further suspicious content (1). HTTPS alone does not prove the site belongs to the school (1). Verify using a known official school contact or website (1). Report the message and change credentials through the real service if they were already disclosed (1).",
+    "after": "application | An antivirus tool reports a suspicious file on a school computer. Explain a responsible response in four points. | 4 | Stop using or sharing the flagged file (1). Inform the responsible teacher or administrator (1). Follow the approved scan and quarantine or cleaning procedure rather than opening the file to test it (1). Check required files and backups after the authorised cleanup (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u3",
+    "row": 7,
+    "before": "competitive | A folder contains Report.odt, Report.ott and Marks.ods. Which should be used to start a reusable Writer format, and which is the spreadsheet? Explain why renaming an extension is not conversion. | 0 | Report.ott is the Writer template and Marks.ods is the spreadsheet. Changing a filename extension does not change the internal format; use the application's proper save or export process.",
+    "after": "competitive | A student moves a folder, then cannot find it at the old location. Does this prove the folder was deleted? Explain how to check. | 0 | No. Moving changes the location. Check the destination folder and search by the known name before concluding it is missing. Distinguish a move from copying and from deletion; check the Recycle Bin only when deletion is suspected."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u4",
+    "row": 7,
+    "before": "competitive | A service charges ₹200 per job. Variable cost is ₹120 per job and fixed monthly cost is ₹2,400. How many jobs cover these costs, assuming all jobs are paid for? | 0 | Each job contributes ₹80 towards fixed costs: 200 minus 120. Break-even volume is 2,400 divided by 80 = 30 jobs. This extension exercise assumes no other costs or unpaid bills.",
+    "after": "competitive | A learner says that entrepreneurs are born with every skill they need and cannot improve through practice. Evaluate this claim using two entrepreneurial qualities. | 0 | The claim is a myth. Planning can improve through preparing and reviewing realistic tasks, and decision-making can improve through evidence and experience. An entrepreneur should assess weaknesses and keep learning rather than assume ability is fixed."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u4",
+    "row": 8,
+    "before": "competitive | Assertion: A profitable idea can still require careful cash planning. Reason: Customers may pay after the business must pay its suppliers. Explain the relationship. | 0 | Both are true and the reason explains the assertion. Profit and the timing of cash receipts are different; money can be due from customers while immediate bills still need payment.",
+    "after": "competitive | An enterprise sells a useful product but repeatedly breaks promises to customers. Can sales alone establish that the entrepreneur is successful in the wider social role? Explain. | 0 | No. Sales do not prove responsibility or reliable service. Consider whether the venture meets customer needs honestly, fulfils commitments, creates useful work and learns from feedback. Entrepreneurial success involves qualities and social contribution, not only a sales figure."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u5",
+    "row": 7,
+    "before": "competitive | Two classrooms each switch off an unused 100-watt light for 3 hours on 20 days. How much electrical energy is saved in total? | 0 | Total power is 200 watts = 0.2 kW. Time is 60 hours per light over the month. Energy saved is 0.2 × 60 = 12 kWh, assuming each light draws 100 watts when on.",
+    "after": "competitive | A school recycles paper but prints notices that no one needs. Compare preventing that waste with recycling it after printing. | 0 | Avoiding unnecessary printing prevents resource consumption at the outset. Recycling can recover material from necessary waste, but still requires collection and processing. Both may help, but recycling does not justify avoidable consumption."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch5",
+    "row": 4,
+    "before": "long | Explain four precautions when using macros from another person. | 4 | Verify the sender and actual source of the file (1). Do not enable unknown macros merely to dismiss a warning (1). Follow the organisation's security policy and use trusted locations or signatures only as authorised (1). Inspect or obtain a review of the code and test safely with backups before important use (1).",
+    "after": "long | Explain four checks before using a macro in an important spreadsheet. | 4 | Confirm the intended task and obtain the macro through the authorised school or workplace process (1). Check its required starting cells or selection (1). Test it on a suitable copy rather than the only important file (1). Compare its output with expected results before routine use (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch5",
+    "row": 7,
+    "before": "competitive | A manual task takes 2 minutes; preparing a macro takes 12 minutes and each run takes 30 seconds. After how many repetitions is the macro strictly faster overall? | 0 | For n repetitions, manual time is 2n and macro time is 12 + 0.5n minutes. The macro is faster when 1.5n > 12, so n > 8. It is strictly faster from the ninth repetition, excluding additional testing or maintenance time.",
+    "after": "competitive | A recorded macro works on the sample range but changes unintended cells when run from another selection. Does one successful run prove it is reusable everywhere? Explain. | 0 | No. The recording may depend on a starting selection or fixed addresses. Identify those assumptions, make the intended range explicit where appropriate and test representative starting conditions. A successful sample is evidence for that test, not every possible worksheet."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch6",
+    "row": 2,
+    "before": "short | Explain relative and absolute cell references with examples. | 2 | A relative reference such as B2 adjusts when its formula is copied (1). An absolute reference such as $B$2 fixes both column and row (1).",
+    "after": "short | Distinguish a reference to another sheet from a reference to another document. | 2 | A same-document sheet reference uses a source inside the current workbook (1). A reference to another document depends on a separate accessible file as well as the correct sheet and cell (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch6",
+    "row": 5,
+    "before": "application | In C2, the formula =B2*$F$1 calculates a tax amount. What should it become when copied to C3, and why are the references different? | 4 | It becomes =B3*$F$1 (1). B2 changes to B3 to use the next row's amount (1). $F$1 remains fixed for the common tax rate (1). Test multiple rows and check that the rate cell has the correct value (1).",
+    "after": "application | A summary must show a value from cell A1 of a sheet named Annual Sales in the same Calc document. Explain a four-step workflow. | 4 | Identify the intended source sheet and cell (1). Create the reference using the keyboard or mouse with suitable sheet-name quoting, for example ='Annual Sales'.A1 (1). Check the initial result against the source (1). Change a test source value and confirm that the summary updates as intended (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch6",
+    "row": 7,
+    "before": "competitive | The formula =$A2+B$1 is copied from C2 to D4. Write the resulting formula and explain the offsets. | 0 | =$A4+C$1. The move is one column right and two rows down. The fixed column A stays A while row 2 becomes 4; relative column B becomes C while fixed row 1 stays 1.",
+    "after": "competitive | A workbook and linked PDFs are copied together, but one PDF link still points to a private location on the author’s computer. Why can that link fail even though a PDF with the same name was copied? | 0 | The hyperlink may store the old absolute path rather than the copied file’s relative location. A matching name alone does not redirect the link. Check the actual stored target, folder arrangement and access, then test the distributed copy."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u2-ch6",
+    "row": 8,
+    "before": "competitive | Does an absolute cell reference such as $A$1 mean the same thing as an absolute file hyperlink? Explain the shared idea and different contexts. | 0 | No. Both express a kind of fixed reference, but $A$1 fixes a cell's row and column during formula copying. An absolute file hyperlink stores a full target location and can still fail if the file moves.",
+    "after": "competitive | A hyperlink opens another spreadsheet correctly, but the current summary total does not change when that file changes. Explain why successful navigation is not proof of a data reference. | 0 | A hyperlink navigates to a target; it does not necessarily create a formula dependency on its values. Create and verify the required reference or external-data link, then test a controlled source change."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u3-ch11",
+    "row": 2,
+    "before": "short | Explain WHERE and ORDER BY as different parts of a query. | 2 | WHERE selects records satisfying conditions (1). ORDER BY arranges the retrieved results without itself choosing which rows qualify (1).",
+    "after": "short | Explain query criteria and sorting as different operations. | 2 | Criteria select which records qualify (1). Sorting arranges the qualifying results without itself changing which records meet the conditions (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u3-ch11",
+    "row": 3,
+    "before": "long | Write SQL to show Name and Marks from STUDENT for ClassID 2 with Marks at least 70, highest marks first. Explain its main parts. | 4 | SELECT Name, Marks FROM STUDENT WHERE ClassID = 2 AND Marks >= 70 ORDER BY Marks DESC; Award 1 for selecting the required fields and table, 1 for ClassID = 2, 1 for the inclusive marks condition joined with AND, and 1 for descending order.",
+    "after": "long | Describe a Base Design View query that shows Name and Marks for ClassID 2 with Marks at least 70, highest marks first. | 4 | Select the STUDENT source and required output fields (1). Set ClassID equal to 2 (1). Combine it with Marks >= 70 using the same AND condition row (1). Set descending sort on Marks, run the query and check boundary and nonmatching records (1)."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u3-ch11",
+    "row": 7,
+    "before": "competitive | A table has Marks values 10, 20 and NULL. In standard SQL, find COUNT(*), COUNT(Marks), SUM(Marks) and AVG(Marks). | 0 | COUNT(*) = 3; COUNT(Marks) = 2; SUM(Marks) = 30; AVG(Marks) = 15. These aggregates ignore null Marks values except COUNT(*), which counts rows.",
+    "after": "competitive | A query includes records scoring 60, 70 and 80. The designer changes the sort order and claims that the mean score must change. Evaluate the claim and explain the check. | 0 | The mean remains 70 if the same three values are included: reordering does not change their total or count. Check that only the sort changed, not the criteria or source values. This tests numeric query results, not a new formula language."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "u3-ch11",
+    "row": 8,
+    "before": "competitive | Why is WHERE ClassID = NULL not the correct test for a missing class? Write the correct predicate and explain the result. | 0 | Use WHERE ClassID IS NULL. NULL represents a missing or unknown value; equality comparison with NULL does not evaluate as ordinary true equality, so it does not select the intended missing values.",
+    "after": "competitive | A query’s output looks correct for one record. What additional tests distinguish a correct criterion from an accidental match? | 0 | Test a record that should qualify, a record that should not qualify and values at the stated boundary. For combined criteria, test a row satisfying only one condition. Compare results with the intended rule rather than judging one convenient example."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "pa-u3",
+    "row": 2,
+    "before": "Unique passphrases | Using a long account-specific secret rather than reusing one password everywhere | A leaked gaming password is also used for a student's school account. | Replace the reused school credential with a long unique passphrase and enable MFA if available. | A complex password is safe to reuse on unlimited websites. | Reuse allows a breach at one service to threaten accounts at other services. | The school account no longer accepts the leaked credential and has its own secret. | A strong secret does not protect someone who gives it to an attacker.",
+    "after": "Desktop components | Identifying menus, icons and the taskbar in a graphical operating-system interface | A beginner confuses an application icon with the taskbar showing open windows. | Identify each component and use it for its intended desktop task. | Every desktop symbol performs the same operation. | Icons, menus and the taskbar have different interface roles. | The learner can open an intended application and switch to an already open window. | The appearance and exact controls can differ between operating systems."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "pa-u3",
+    "row": 3,
+    "before": "Phishing recognition | Identifying deceptive attempts to obtain sensitive information or unsafe actions | An urgent message asks a student to send a login code to prevent account closure. | Refuse to share the code and verify the request through a known official contact. | Urgency and an official-looking logo prove a message is genuine. | Attackers can copy branding and create urgency to bypass careful checking. | The supposed request is checked independently rather than through the message's own link. | Suspicion should lead to verification, not to publicly sharing private message contents.",
+    "after": "Virus protection and scanning | Using appropriate antivirus measures as part of computer maintenance | A shared school computer has a file flagged as a possible virus. | Inform the responsible adult and follow the approved scan and cleaning or quarantine procedure. | Opening a flagged file is the safest way to find out what it does. | Suspected malicious files should not be run to test them. | The approved tool and responsible person check the affected files and required recovery steps. | A scan result does not remove the need for safe file handling and regular maintenance."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "pa-u3",
+    "row": 4,
+    "before": "File type awareness | Recognising what a file format represents and opening it with suitable software | A learner renames a CSV file with an ODS extension and calls it converted. | Import the CSV into Calc and save it in the required actual format. | Changing the extension changes the internal structure of the file. | A filename label does not perform data-format conversion. | Calc opens the saved file as the intended format with the expected fields and values. | Imported text may require delimiter, encoding or data-type choices.",
+    "after": "File and folder operations | Creating, copying, moving, renaming and organising files in suitable folders | A student wants a copy of a report in a project folder while keeping the original. | Copy the file to the intended folder and verify both copies. | Moving and copying always leave the same number of independent files. | Copying retains the source while moving changes its location. | The project folder contains the required copy and the original remains at its source. | A copied filename alone does not prove that the intended version was copied."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "pa-u3",
+    "row": 9,
+    "before": "Transport encryption | Protecting data while it travels between a browser and a website | A fake scholarship site displays HTTPS while asking for unnecessary account credentials. | Check the domain and organisation independently before entering sensitive information. | HTTPS means the website owner must be honest. | An encrypted connection can still lead to a deceptive website. | The browser connects to the independently verified official domain using a secure connection. | Transport security does not establish that a site's claims or requests are legitimate.",
+    "after": "Operating-system interfaces | Comparing the ways an operating system lets users give commands and manage work | One system uses typed commands while another offers desktop menus and icons. | Identify the command-based and graphical interaction styles and demonstrate the required basic task. | A graphical interface means the computer no longer needs an operating system. | A graphical interface is a way of interacting with system functions, not a replacement for the operating system. | The learner can explain how the chosen interface is used to perform a basic file operation. | Interface differences do not by themselves prove one system is suitable for every task."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "pa-u4",
+    "row": 7,
+    "before": "Cash-flow planning | Planning when money will actually enter and leave a business | A profitable contractor must pay suppliers today but clients will pay next month. | Forecast receipt and payment dates and arrange a responsible funding or timing plan. | A positive profit figure means enough cash is available at every moment. | Profit and the timing of cash availability are different. | The business can meet each planned payment when it falls due. | Forecasts depend on customers actually paying and expenses matching estimates.",
+    "after": "Entrepreneurship as a career option | Considering enterprise ownership as a possible career with responsibilities and uncertainty | A learner considers a small service venture instead of salaried employment. | Compare the required qualities, responsibilities, resources and local needs before deciding. | Becoming an entrepreneur guarantees a fixed salary and removes all responsibility. | An entrepreneur takes responsibility for a venture and faces uncertain results. | The career comparison identifies real duties and required qualities rather than only imagined rewards. | Suitability depends on the learner and context; no career option guarantees success."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u2-ch6",
+    "row": 3,
+    "before": "Relative cell movement | Adjusting unfixed reference coordinates when a formula is copied | A row-by-row calculation should use each row's own quantity cell. | Use a suitable relative reference and verify the copied formulas' row changes. | A relative reference always points to the original fixed row after copying. | Relative coordinates move by the copying offset. | The formula in the next row references that row's intended quantity. | Relative references are inappropriate for inputs that must remain fixed.",
+    "after": "Organising multiple sheets | Inserting and naming sheets so related data can be managed in one workbook | A project needs separate clearly identified sheets for different months. | Insert the required sheets and give them meaningful distinct names. | Several sheets must always be stored as unrelated documents. | A Calc document can contain multiple organised sheets. | The workbook contains the required month sheets and users can select the intended one. | Organisation does not establish that values on the sheets are accurate."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u2-ch6",
+    "row": 4,
+    "before": "Absolute cell coordinates | Fixing both a reference's row and column during formula copying | Every row's price calculation must use one common rate in F1. | Refer to the shared rate as $F$1 while allowing row-specific inputs to move. | Fixing only the column necessarily fixes the row too. | Row and column locking are independent; both require dollar signs for a fully absolute reference. | Copied formulas still point to F1 for the common rate. | Absolute references fix copy behaviour, not the value stored in the referenced cell.",
+    "after": "References to another document | Linking a cell or range to a source in a separate spreadsheet file | A summary needs a value from an approved workbook maintained by another department. | Create the external reference using the correct document, sheet and cell through the supported keyboard or mouse workflow. | Opening the source once guarantees that its values will always remain accessible. | A reference to another document depends on a maintained accessible source and correct location. | A known source value appears in the intended summary cell and a controlled update is checked. | Moved files or changed permissions can interrupt the external dependency."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u2-ch6",
+    "row": 5,
+    "before": "Mixed cell coordinates | Fixing one coordinate while allowing the other to adjust during copying | A table formula must keep row 1 for headings but move across columns when copied. | Use an appropriate mixed reference such as B$1 and inspect horizontal copies. | A mixed reference must either move both coordinates or fix both. | A mixed reference locks just one coordinate and leaves the other relative. | The copied reference changes column but retains row 1. | The correct locked coordinate depends on the copying direction and task.",
+    "after": "Registered data sources | Making an appropriate data source available through the application’s supported data-source workflow | A learner must use an approved registered database source in a spreadsheet. | Open the supported data-source view, choose the intended source and bring in the required records. | Choosing any similarly named source guarantees the correct records. | The registered source, table or query and selected records all need verification. | The imported or linked records agree with a known sample in the intended source. | Registration does not guarantee freshness, accuracy or unrestricted access."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 6,
+    "before": "Counting rows and values | Distinguishing total result rows from non-null values of a particular expression | A table has three rows but one row has no Marks value. | Use COUNT(*) for rows and COUNT(Marks) for present marks, according to the question. | COUNT(Marks) always includes every row even when Marks is null. | A count of a nullable expression excludes its null values. | The row count is three while the count of present marks is two. | Counting present values does not verify that those values are valid.",
+    "after": "Numerical query calculations | Using a query to calculate with selected numerical fields | A query should show the value of each order line from Quantity and UnitPrice. | Add and check the required calculated result using the appropriate query tools. | A displayed calculated amount is correct even if it uses the wrong numerical fields. | A calculation must use the intended operands and operation. | A simple test order with known quantity and price gives the manually expected amount. | Correct arithmetic does not establish that the entered source quantities and prices are true."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 7,
+    "before": "SQL pattern matching | Using LIKE with appropriate wildcards to match text patterns | A standard SQL query should find names beginning with the letter R. | Use a condition such as Name LIKE 'R%' under the intended matching rules. | In standard SQL, percent matches exactly one character and never more. | Percent matches a sequence of characters; underscore is the single-character wildcard. | Names with the intended prefix match while unrelated prefixes are excluded. | Case sensitivity and graphical Base criteria notation can vary with the database and interface.",
+    "after": "Wildcard searches in Query Design | Matching text patterns through the query interface’s supported wildcard criteria | A query should list names that begin with R. | Enter and test the supported prefix criterion, such as R* where the graphical interface uses * for a character sequence. | A prefix pattern should also require every name to end with R. | A starting-letter condition and an ending-letter condition select different patterns. | Test names with and without the required prefix produce the intended matches. | Wildcard notation and case handling should be checked in the actual Base interface and database."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 8,
+    "before": "Testing for null | Checking explicitly for a missing or unknown SQL value | A query needs records whose assigned ClassID is missing. | Use ClassID IS NULL rather than ordinary equality to NULL. | Comparing a value to NULL with = works like comparing two ordinary numbers. | SQL null tests require IS NULL or IS NOT NULL for this purpose. | Missing ClassID records are selected without treating the text 'NULL' as a missing value. | Missing values must be interpreted using the application's actual data rules.",
+    "after": "Editing query criteria | Changing an existing query’s selection rule without deleting source records | A teacher changes the required minimum score from 50 to 60. | Edit the saved query’s criterion and run it again with boundary test records. | Raising a retrieval threshold must delete every lower-scoring student from the table. | A retrieval criterion changes which records are displayed, not the stored records themselves. | Scores below 60 no longer appear in the result while the source retains those students. | Other criteria and sort settings may still affect the displayed result."
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 9,
+    "before": "Grouped aggregation | Calculating summaries separately for records sharing a grouping value | A school wants one average mark per class rather than one average for everyone. | Group by class and apply the required aggregate to each group's marks. | One whole-table average necessarily gives every class's individual mean. | Separate group statistics require the intended grouping, not only a global aggregate. | Each returned class summary matches a manual check on that class's included values. | Null handling and unequal group sizes affect how summaries should be interpreted.",
+    "after": "Checking numerical query summaries | Comparing numerical query results with the included source values | A query reports the average of three complete scores but a reviewer has checked only one row. | Verify all included values and compare the reported mean with the expected calculation. | One correct displayed row proves every numerical summary is right. | A summary depends on the full intended set of included values. | The reported mean matches a manual check of the included test scores. | Excluded or missing data and changed criteria can alter the meaning of a summary."
+  },
+  {
+    "source": "content/practice/written.txt",
+    "chapter": "pa-u4",
+    "row": "application-1",
+    "before": "Profit arithmetic followed by expansion advice",
+    "after": "Business-planning actions using customer demand, resources, responsibilities and testing"
+  },
+  {
+    "source": "tools/trend_practice.py",
+    "chapter": "u3-ch11",
+    "row": "PRACTICE",
+    "before": "Write a SELECT/WHERE/ORDER BY SQL statement",
+    "after": "Describe fields, a >=75 criterion and descending sort in Base Design View"
+  },
+  {
+    "source": "tools/trend_practice.py",
+    "chapter": "u3-ch11",
+    "row": "MCQS",
+    "before": "Choose the SQL clause WHERE Marks >=75",
+    "after": "Choose the query criterion >=75"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "u2-ch5",
+    "row": "macro-storage",
+    "before": "Recorded macros are stored under…",
+    "after": "Which location can store a user’s LibreOffice macros?"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "u4-ch15",
+    "row": "electrical-response",
+    "before": "First step in an electrical rescue?",
+    "after": "If it can be done safely, which action isolates the electrical supply before contact-based assistance?"
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 3,
+    "before": [
+      "Which operator requires both conditions to be true?",
+      "AND",
+      "OR",
+      "NOT alone",
+      "LIKE alone",
+      "AND combines conditions by requiring each one to hold."
+    ],
+    "after": [
+      "Which operator requires both conditions to be true?",
+      "AND",
+      "OR",
+      "Descending sort",
+      "Visible/Show",
+      "AND combines conditions by requiring each one to hold."
+    ]
+  },
+  {
+    "source": "content/practice/mcqs.txt",
+    "chapter": "u3-ch11",
+    "row": 4,
+    "before": [
+      "Which operator includes records satisfying either of two conditions?",
+      "OR",
+      "AND",
+      "ASC",
+      "GROUP BY",
+      "OR allows a record when at least one condition is true."
+    ],
+    "after": [
+      "Which operator includes records satisfying either of two conditions?",
+      "OR",
+      "AND",
+      "Ascending sort",
+      "Report title",
+      "OR allows a record when at least one condition is true."
+    ]
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 1,
+    "before": [
+      "Selecting output fields",
+      "Choosing which attributes a query returns without deleting source columns",
+      "A result should show only StudentName and Marks from a wider student table.",
+      "Select those output fields in the query while leaving the source table structure intact.",
+      "Omitting a field from SELECT deletes that column from the table.",
+      "Query projection controls returned output, not the source table's stored columns.",
+      "The result displays the requested two fields and the source retains its other fields.",
+      "A narrow output can still expose sensitive data if the chosen fields are inappropriate."
+    ],
+    "after": [
+      "Selecting output fields",
+      "Choosing which attributes a query returns without deleting source columns",
+      "A result should show only StudentName and Marks from a wider student table.",
+      "Select those output fields in the query while leaving the source table structure intact.",
+      "Omitting a field from the query output deletes that column from the table.",
+      "Selecting query output fields controls returned columns, not the source table’s stored columns.",
+      "The result displays the requested two fields and the source retains its other fields.",
+      "A narrow output can still expose sensitive data if the chosen fields are inappropriate."
+    ]
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 3,
+    "before": [
+      "AND conditions",
+      "Requiring every joined condition to be satisfied by a record",
+      "A result must include ClassID 3 students who also score above 70.",
+      "Join the class and marks conditions with AND.",
+      "OR always requires both conditions to be true.",
+      "OR permits either condition; AND requires both.",
+      "A high-scoring student in another class is excluded from the result.",
+      "Operator precedence or parentheses matter when combining more complex conditions."
+    ],
+    "after": [
+      "AND conditions",
+      "Requiring every joined condition to be satisfied by a record",
+      "A result must include ClassID 3 students who also score above 70.",
+      "Join the class and marks conditions with AND.",
+      "OR always requires both conditions to be true.",
+      "OR permits either condition; AND requires both.",
+      "A high-scoring student in another class is excluded from the result.",
+      "In Query Design, placement on different condition rows affects which combinations are included."
+    ]
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 4,
+    "before": [
+      "OR conditions",
+      "Allowing a record when at least one of the joined conditions holds",
+      "A contact list should include customers from Delhi or Mumbai.",
+      "Join the two alternative city conditions with OR.",
+      "A single city field must simultaneously equal both different city names.",
+      "The alternatives are satisfied by either allowed value, not by impossible simultaneous equality.",
+      "Valid records from either named city appear and unrelated cities do not.",
+      "Additional restrictions must be grouped correctly so they apply to both alternatives."
+    ],
+    "after": [
+      "OR conditions",
+      "Allowing a record when at least one of the joined conditions holds",
+      "A contact list should include customers from Delhi or Mumbai.",
+      "Join the two alternative city conditions with OR.",
+      "A single city field must simultaneously equal both different city names.",
+      "The alternatives are satisfied by either allowed value, not by impossible simultaneous equality.",
+      "Valid records from either named city appear and unrelated cities do not.",
+      "Check the complete criteria grid, not just one matching city, when other restrictions must also apply."
+    ]
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch11",
+    "row": 5,
+    "before": [
+      "Result ordering",
+      "Arranging retrieved rows by selected sort expressions without changing stored facts",
+      "A marks report needs the highest score first.",
+      "Specify descending order on Marks in the query.",
+      "DESC means discard every record except the highest one.",
+      "Descending order sorts rows; it does not itself limit the result to one row.",
+      "Retrieved marks run from higher to lower while all qualifying records remain.",
+      "Tied values need another sort field if a deterministic tie order is required."
+    ],
+    "after": [
+      "Result ordering",
+      "Arranging retrieved rows by selected sort expressions without changing stored facts",
+      "A marks report needs the highest score first.",
+      "Specify descending order on Marks in the query.",
+      "Descending sort means discard every record except the highest one.",
+      "Descending order sorts rows; it does not itself limit the result to one row.",
+      "Retrieved marks run from higher to lower while all qualifying records remain.",
+      "Tied values need another sort field if a deterministic tie order is required."
+    ]
+  },
+  {
+    "source": "content/practice/scenarios.txt",
+    "chapter": "u3-ch10",
+    "row": 9,
+    "before": [
+      "Normalised related facts",
+      "Storing a fact at its appropriate entity level and linking records instead of repeating it",
+      "A department address is copied into every employee record and is updated inconsistently.",
+      "Keep the department address in the department table and use employee references to it.",
+      "Inconsistent repeated addresses are solved by adding still more copies.",
+      "Centralising the relevant fact reduces opportunities for divergent repeated values.",
+      "Employees' department address is obtained from the maintained department record.",
+      "Historical addresses may require a deliberate history design rather than simple overwriting."
+    ],
+    "after": [
+      "Reducing repeated related facts",
+      "Storing a fact at its appropriate entity level and linking records instead of repeating it",
+      "A department address is copied into every employee record and is updated inconsistently.",
+      "Keep the department address in the department table and use employee references to it.",
+      "Inconsistent repeated addresses are solved by adding still more copies.",
+      "Centralising the relevant fact reduces opportunities for divergent repeated values.",
+      "Employees' department address is obtained from the maintained department record.",
+      "Historical addresses may require a deliberate history design rather than simple overwriting."
+    ]
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "Link (stores path only)",
+    "after": "Link (references an external image file)"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "Before applying Subtotals, data must first be…",
+    "after": "Which grouping order supports reliable department-wise subtotals?"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "On a Base form, Label vs Text Box…",
+    "after": "On a data-bound Base form, Label versus Text Box…"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "Label shows fixed text, Text Box stores input",
+    "after": "Label shows fixed text, Text Box edits a linked field"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "The screen should be placed…",
+    "after": "Which is a typical starting position for a desktop screen?"
+  },
+  {
+    "source": "tools/quiz.py",
+    "chapter": "see reviewed legacy mapping",
+    "row": "wording clarification",
+    "before": "50–70 cm away at eye level",
+    "after": "About 50–70 cm away, with the top at or slightly below eye level"
+  }
+]

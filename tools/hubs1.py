@@ -17,11 +17,11 @@ INDEX = """<div class="crumbs"><a href="index.html">Home</a> / Home</div>
 <div class="cards">
 <div class="card part-a" data-unit="pa-u" data-total="5"><h3>Part A · Employability (10)</h3>
 <p>Workplace behaviour and green skills.</p>
-<ul><li><a href="chapters/pa-u1-communication.html">U1 · Communication-II</a> <small>(2)</small></li>
-<li><a href="chapters/pa-u2-self-management.html">U2 · Self-Management-II</a> <small>(3 ⭐)</small></li>
-<li><a href="chapters/pa-u3-ict.html">U3 · ICT Skills-II</a> <small>(1)</small></li>
-<li><a href="chapters/pa-u4-entrepreneurial.html">U4 · Entrepreneurial-II</a> <small>(3 ⭐)</small></li>
-<li><a href="chapters/pa-u5-green.html">U5 · Green Skills-II</a> <small>(1)</small></li></ul>
+<ul><li><a href="chapters/pa-u1-communication.html">U1 · Communication-II</a></li>
+<li><a href="chapters/pa-u2-self-management.html">U2 · Self-Management-II</a></li>
+<li><a href="chapters/pa-u3-ict.html">U3 · ICT Skills-II</a></li>
+<li><a href="chapters/pa-u4-entrepreneurial.html">U4 · Entrepreneurial-II</a></li>
+<li><a href="chapters/pa-u5-green.html">U5 · Green Skills-II</a></li></ul>
 <div class="unitbar"><div class="progress"><i data-unit-bar></i></div><small data-unit-label>0/5 chapters</small></div>
 <p><a href="part-a.html">Unit overview →</a></p></div>
 <div class="card u1" data-unit="u1-ch" data-total="3"><h3>Unit 1 · Writer (8)</h3>
@@ -71,7 +71,7 @@ INDEX = """<div class="crumbs"><a href="index.html">Home</a> / Home</div>
 <div class="callout tip"><b>Exam countdown:</b> Target February 2027 boards; verify the official CBSE date sheet when published.</div>
 <h2>Jump in</h2>
 <div class="cards"><a class="card" href="practical.html"><h3>💻 Practical lab</h3><p>25 tasks, mock exam, troubleshooting, 50 viva Qs.</p></a>
-<a class="card" href="question-bank.html"><h3>❓ Test yourself</h3><p>30-question quizzes, 100 objectives, 2 sample papers + timer.</p></a>
+<a class="card" href="question-bank.html"><h3>❓ Test yourself</h3><p>220 questions per chapter: 60 MCQs + 160 written. 4,400 syllabus-mapped questions on 20 pages.</p></a>
 <a class="card" href="pyq.html"><h3>📝 PYQ practice</h3><p>8 official SQP documents spanning 2019–26, 158 solved questions and syllabus-aware trends.</p></a>
 <a class="card" href="revision.html"><h3>🧠 Exam morning</h3><p>Paths, shortcuts, numbers and answer frames.</p></a></div>"""
 
@@ -89,6 +89,7 @@ SYLLABUS = """<div class="crumbs"><a href="index.html">Home</a> / Syllabus</div>
 <tr><td>Unit 2 · Electronic Spreadsheet — Ch 4–7</td><td>10</td><td><a href="unit2-calc.html">Study →</a></td></tr>
 <tr><td>Unit 3 · DBMS — Ch 8–12</td><td><b>12</b></td><td><a href="unit3-dbms.html">Study →</a></td></tr>
 <tr><td>Unit 4 · Safe working environment — Ch 13–15</td><td>10</td><td><a href="unit4-safety.html">Study →</a></td></tr></table>
+<p><b>Part A note:</b> The <a href="https://cbseacademic.nic.in/web_material/Curriculum27/Sec/402-IT-X.pdf#page=3">official 2026–27 curriculum, page 3</a> publishes the Part A allocation as 2/3/1/3/1 (total 10). This is a curriculum allocation, not a guarantee of particular recurring questions. Prepare every unit. <a href="syllabus-audit.html">Question-bank syllabus audit →</a></p>
 <h2>Theory paper pattern (50 marks, 2 hours)</h2>
 <div class="cards"><div class="card"><h3>Section A · Objective · 24</h3>
 <p><b>Q1:</b> Employability — 6 sub-Qs, attempt any 4 = 4.<br><b>Q2–Q5:</b> Subject skills — 24 sub-Qs, attempt any 20 = 20.</p>
@@ -119,7 +120,7 @@ REVISION = """<div class="crumbs"><a href="index.html">Home</a> / Revision</div>
 <h1>Exam morning · quick revision</h1>
 <p class="card">One glance before you enter the hall: every menu path, shortcut, number and key. Print this page after checking your school's latest instructions.</p>
 <div class="cards">
-<div class="card"><div class="card"><b>Trend-informed revision:</b> practise styles and images, Calc analysis and links, and DBMS foundations and queries first. Keep forms, reports and current safety chapters in your plan. SQP recurrence is not a prediction. <a href="question-bank.html#trend-practice">20 written practice questions →</a> · <a href="pyq.html">Evidence and syllabus limits →</a></div>
+<div class="card"><div class="card"><b>Trend-informed revision:</b> practise styles and images, Calc analysis and links, and DBMS foundations and queries first. Keep forms, reports and current safety chapters in your plan. SQP recurrence is not a prediction. <a href="question-bank.html">Chapter-wise questions with hidden answers →</a> · <a href="pyq.html">Evidence and syllabus limits →</a></div>
 <h2>Writer paths</h2>
 <p><b>Styles:</b> <kbd>F11</kbd> → double-click → Edit/Update<br><b>Fill Format:</b> paint icon → click paras → <kbd>Esc</kbd><br>
 <b>Image:</b> Insert → Image → Anchor / Wrap / Caption<br><b>ToC:</b> Headings first → Insert → Table of Contents and Index → Update<br>
