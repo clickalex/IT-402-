@@ -7,6 +7,8 @@ import csv
 import hashlib
 import io
 import json
+import math
+import re
 from functools import lru_cache
 from html import escape
 from pathlib import Path
@@ -46,6 +48,152 @@ def syllabus_links(question, prefix='../'):
         raise ValueError('Question has no reviewed syllabus mapping')
     return '<p class="syllabus-reference"><small>Syllabus topic: ' + ' · '.join(
         f'<a href="{prefix}syllabus-audit.html#{ref}">{escape(ref)}</a>' for ref in refs) + '</small></p>'
+
+
+def pyq_map():
+    """Map each chapter id to its canonical PYQ anchor (C-U1..C-U5, C-Ch1..C-Ch15)."""
+    from tpl import CHAPTERS
+    anchors = {}
+    for c in CHAPTERS:
+        cid = c[0]
+        if cid.startswith('pa-u'):
+            anchors[cid] = 'C-U' + cid.rsplit('-', 1)[1][1:]  # pa-u1 -> C-U1
+        else:
+            anchors[cid] = 'C-Ch' + cid.rsplit('-ch', 1)[1]    # u3-ch8 -> C-Ch8
+    return anchors
+
+
+PYQ_STOPWORDS = frozenset((
+    'a an the is are was were be been being of in on at to for with by from as and or '
+    'but if then else this that these those it its which what who whom whose how when '
+    'where why can could should would may might must shall will do does did done not no '
+    'yes so such more most some any all each every both few several many much own same '
+    'other another new old good bad into about over under above below between among '
+    'during before after against through'
+).split())
+
+PYQ_MATCH_THRESHOLD = 0.6
+
+
+def _pyq_norm(text):
+    text = text.lower().replace('’', "'").replace('‘', "'").replace('“', '"').replace('”', '"')
+    text = re.sub(r'[^a-z0-9]+', ' ', text)
+    return re.sub(r'\s+', ' ', text).strip()
+
+
+def _pyq_tokens(text):
+    # Single-character tokens (option/fill-in letters like "A" or "T") are kept,
+    # even when they coincide with an English stopword such as "a".
+    return [token for token in _pyq_norm(text).split() if len(token) == 1 or token not in PYQ_STOPWORDS]
+
+
+@lru_cache(maxsize=1)
+def _pyq_idf():
+    """Inverse document frequency of tokens across the solved PYQ bank.
+
+    Topic-generic words (e.g. "key", "primary", "data") that recur throughout a
+    chapter's PYQs get low weight, so two different questions sharing only common
+    vocabulary do not look "closely matched"; distinctive words get high weight.
+    """
+    entries = pyq_entries()
+    document_frequency = {}
+    for entry in entries:
+        for token in set(entry[2]):
+            document_frequency[token] = document_frequency.get(token, 0) + 1
+    total = len(entries)
+    return {token: math.log((total + 1) / (count + 1)) + 1 for token, count in document_frequency.items()}
+
+
+def _pyq_similarity(tokens_a, tokens_b):
+    if not tokens_a or not tokens_b:
+        return 0.0
+    set_a, set_b = set(tokens_a), set(tokens_b)
+    overlap = set_a & set_b
+    if not overlap:
+        return 0.0
+    idf = _pyq_idf()
+    unseen = math.log(len(pyq_entries()) + 1) + 1  # rarest possible token
+    numerator = 2 * sum(idf.get(token, unseen) for token in overlap)
+    denominator = sum(idf.get(token, unseen) for token in set_a) + sum(idf.get(token, unseen) for token in set_b)
+    return numerator / denominator
+
+
+@lru_cache(maxsize=1)
+def pyq_entries():
+    """Solved PYQ bank as (chapter, session, tokens, single-letters) entries.
+
+    Only in-syllabus entries are kept; ``⛔`` skip-list lines are excluded so an
+    authored question never matches a removed topic.
+    """
+    md = (ROOT / 'content' / 'pyq' / 'chapterwise.md').read_text(encoding='utf-8')
+    anchors = pyq_map()
+    reverse = {tag: cid for cid, tag in anchors.items()}
+    entries = []
+    current = None
+    for line in md.splitlines():
+        stripped = line.strip()
+        if stripped.startswith('#'):
+            match = re.match(r'^###\s+(C-U\d|C-Ch\d+)\b', stripped)
+            current = reverse.get(match.group(1)) if match else None
+            continue
+        if not current:
+            continue
+        question = None
+        match = re.match(r'^- \[SQP (\d\d-\d\d) [^\]]*\] (.+?) → .+$', stripped)
+        if match:
+            question = match.group(2)
+        else:
+            match = re.match(r'^\*\*Q \(SQP (\d\d-\d\d) [^)]*\):\*\* (.+)$', stripped)
+            if match:
+                question = match.group(2)
+        if question is None:
+            continue
+        tokens = _pyq_tokens(question)
+        letters = frozenset(token for token in tokens if len(token) == 1 and token.isalpha())
+        entries.append((current, match.group(1), tuple(tokens), letters))
+    return entries
+
+
+def pyq_reference(question, prefix='../'):
+    """Render the PYQ session reference for questions that closely match a real PYQ.
+
+    An authored question only shows a PYQ year when an in-syllabus official SQP
+    question on the same chapter is a close token match (Dice similarity on content
+    words); otherwise no PYQ reference is shown. Single-letter tokens (option or
+    fill-in letters such as “T” vs “A”) must agree, so near-identical questions
+    with different answers are not cross-tagged.
+    """
+    refs = question.get('syllabus', [])
+    if not refs:
+        raise ValueError('Question has no reviewed syllabus mapping')
+    outcomes = registry()['outcomes']
+    chapters = list(dict.fromkeys(outcomes.get(ref, {}).get('chapter') for ref in refs if outcomes.get(ref, {}).get('chapter')))
+    if not chapters:
+        raise ValueError('Question has no reviewed syllabus mapping')
+    anchors = pyq_map()
+    tokens = _pyq_tokens(question['question'])
+    letters = frozenset(token for token in tokens if len(token) == 1 and token.isalpha())
+    sessions = []
+    if len(tokens) >= 2:
+        for chapter in chapters:
+            for entry_chapter, session, pyq_tokens, pyq_letters in pyq_entries():
+                if entry_chapter != chapter:
+                    continue
+                if len(pyq_tokens) < 2:
+                    continue
+                if _pyq_similarity(tokens, pyq_tokens) < PYQ_MATCH_THRESHOLD:
+                    continue
+                if letters and pyq_letters and letters != pyq_letters:
+                    continue
+                if session not in sessions:
+                    sessions.append(session)
+    if not sessions:
+        return ''
+    sessions.sort()
+    anchor = anchors[chapters[0]]
+    return ('<p class="pyq-reference"><small>PYQ: '
+            + ' · '.join(f'<a href="{prefix}pyq.html#{anchor}">{escape(session)}</a>' for session in sessions)
+            + '</small></p>')
 
 
 def audit_csv(bank):

@@ -9,7 +9,7 @@ from tpl import CHAPTERS, GROUPS, BY_ID, page
 from quiz import QUIZZES, QUIZ_CHAPTERS, PYQ_ANCHOR
 from trend_practice import PRACTICE
 from practice_expansion import expand_bank
-from syllabus_review import approve, syllabus_links, write_audit, validate_expansion_engine
+from syllabus_review import approve, syllabus_links, pyq_reference, write_audit, validate_expansion_engine
 
 ROOT = Path(__file__).resolve().parents[1]
 TYPES = [('mcq', 'MCQs'), ('short', 'Short questions'), ('long', 'Long questions'),
@@ -125,7 +125,7 @@ def render_question(cid, kind, number, q):
         question = f'<h3>{number}. {prompt}</h3>'
         answer = f'<p>{escape(q["answer"])}</p>'
     return (f'<article class="practice-question" id="{ident}" data-question-type="{kind}">'
-            f'<p class="question-meta">{marks}</p>{question}{syllabus_links(q)}'
+            f'<p class="question-meta">{marks}</p>{question}{syllabus_links(q)}{pyq_reference(q)}'
             f'<details class="answer-reveal"><summary><span class="answer-show">Show answer</span>'
             f'<span class="answer-hide">Hide answer</span><span class="sr-only"> for {kind} question {number}</span></summary>'
             f'<div class="model-answer">{answer}</div></details></article>')

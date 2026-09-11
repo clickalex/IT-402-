@@ -78,6 +78,14 @@ Answers stay hidden in native `<details>` until opened, including offline withou
 JavaScript. MCQ choices are self-study, not scored or saved. Type filtering and six
 sets-of-ten MCQ jump links remain available; no-JS users see all 220 questions.
 
+Every question shows its **syllabus topic reference** (e.g. `Syllabus topic: B8`).
+A question additionally shows a **PYQ year reference** (`PYQ: 24-25`, linking to the
+official SQP questions for that chapter) only when it closely matches an official
+PYQ on the same topic. The match is a weighted token-overlap check against
+`content/pyq/chapterwise.md` (content words, rare terms weighted up, fill-in/option
+letters required to agree). Original questions that do not mirror a real PYQ show
+no year.
+
 ### Official syllabus review
 
 - Open **`syllabus-audit.html`** for sources, learning-outcome references, scope and
@@ -113,3 +121,22 @@ node --check assets/js/app.js
 Optional browser tests use Playwright/Chromium and a local static server:
 `python3 tests/browser_practice.py`. `BASE_URL` and `CHROMIUM_EXECUTABLE` override
 its server and browser. No browser dependency is shipped with the study website.
+
+## Hindi / Hinglish language switching
+
+A language picker sits in the top bar (English · हिंदी · Hinglish) and works on
+every page; the choice is remembered in `localStorage`.
+
+- **Offline:** navigation, buttons, labels and common phrases translate from a
+  local dictionary in `assets/js/i18n.js` — this part needs no internet.
+- **Online:** body text (questions, answers, notes) is translated on demand with
+  the free Google Translate endpoint and cached in `localStorage`, so a page
+  translated once opens instantly next time. Offline, untranslated text simply
+  stays in English — the site never breaks.
+- **Technical terms** (`Fill Format`, `Goal Seek`, `SQL`, `Ctrl+Shift+N`, menu
+  paths, …) are protected so they stay intact in both Hindi and Hinglish; Hinglish
+  is the Hindi translation re-rendered in Latin script.
+
+Dynamic labels (progress, quiz score, filters) go through the same dictionary, so
+the whole interface switches language together. Validate scripts with
+`node --check assets/js/app.js && node --check assets/js/i18n.js`.
