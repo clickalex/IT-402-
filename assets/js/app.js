@@ -41,6 +41,9 @@ const pages=[
 const $=s=>document.querySelector(s), $$=s=>document.querySelectorAll(s);
 const TOTAL=20;
 const prefix=()=>/\/(chapters|practice)\//.test(location.pathname)?'../':'';
+// Load the Hindi / Hinglish language switcher synchronously so I18N is ready below.
+(function(){const s=document.createElement('script');s.src=prefix()+'assets/js/i18n.js';s.async=false;document.head.appendChild(s);})();
+const tr=(k,en,rep)=>{if(window.I18N)return window.I18N.tr(k,en,rep);let s=en;if(rep)s=s.replace(/\{(\w+)\}/g,(m,kk)=>rep[kk]!=null?rep[kk]:m);return s;};
 function init(){
   setupPracticeNavigation();setupQuestionSections();
   const theme=localStorage.getItem('it402-theme');
@@ -78,13 +81,13 @@ function updateProgress(){
   const keys=Object.keys(all), done=keys.filter(k=>all[k]).length;
   const pct=Math.round(done/TOTAL*100);
   $$('[data-progress]').forEach(el=>el.style.width=pct+'%');
-  $$('[data-progress-label]').forEach(el=>el.textContent=`${done} of ${TOTAL} chapters marked complete`);
+  $$('[data-progress-label]').forEach(el=>el.textContent=tr('progress_label','{done} of {total} chapters marked complete',{done,total:TOTAL}));
   $$('[data-unit]').forEach(el=>{
     const pre=el.dataset.unit, tot=+el.dataset.total||0;
     const d=keys.filter(k=>k.startsWith(pre)&&all[k]).length;
     const bar=el.querySelector('[data-unit-bar]'), lab=el.querySelector('[data-unit-label]');
     if(bar)bar.style.width=(tot?Math.round(d/tot*100):0)+'%';
-    if(lab)lab.textContent=`${d}/${tot} chapters`;
+    if(lab)lab.textContent=tr('unit_label','{d}/{tot} chapters',{d,tot});
   });
 }
 function setupSearch(){
@@ -97,7 +100,8 @@ function setupSearch(){
     const q=input.value.trim().toLowerCase(), px=prefix();
     if(!q){out.style.display='none';return}
     const hits=pages.filter(p=>(p[0]+' '+p[2]).toLowerCase().includes(q)).slice(0,10);
-    out.innerHTML=hits.length?hits.map(p=>`<a class="result" href="${px}${p[1]}"><b>${p[0]}</b><br><small>${p[2]}</small></a>`).join(''):'<div class="result">No page found — try “macros”, “viva” or “ergonomics”.</div>';
+    const noPage='No page found — try “macros”, “viva” or “ergonomics”.';
+    out.innerHTML=hits.length?hits.map(p=>`<a class="result" href="${px}${p[1]}"><b>${p[0]}</b><br><small>${p[2]}</small></a>`).join(''):`<div class="result">${tr(noPage,noPage)}</div>`;
     out.style.display='block';
   });
   document.addEventListener('click',e=>{if(!e.target.closest('.search'))out.style.display='none'});
@@ -111,7 +115,7 @@ function refreshQuizScore(box){
   const visible=Array.from(box.querySelectorAll('.quiz-question')).filter(q=>!q.hidden);
   const answered=visible.filter(q=>q.dataset.done);
   const correct=answered.filter(q=>q.dataset.correct==='1');
-  box.querySelector('.quiz-score').textContent=`Score: ${correct.length}/${answered.length} answered (of ${visible.length} shown)`;
+  box.querySelector('.quiz-score').textContent=tr('Score: {c}/{a} answered (of {v} shown)','Score: {c}/{a} answered (of {v} shown)',{c:correct.length,a:answered.length,v:visible.length});
 }
 function setupQuiz(){
   $$('.quiz').forEach(box=>{
@@ -122,7 +126,7 @@ function setupQuiz(){
       q.dataset.correct=inp.value===q.dataset.answer?'1':'0';
       const fb=q.querySelector('.feedback');
       fb.setAttribute('role','status');
-      fb.textContent=q.dataset.correct==='1'?'✓ Correct':'✗ Correct answer: '+q.dataset.answer;
+      fb.textContent=q.dataset.correct==='1'?tr('✓ Correct','✓ Correct'):tr('✗ Correct answer: {a}','✗ Correct answer: {a}',{a:q.dataset.answer});
       fb.style.color=q.dataset.correct==='1'?'#15803d':'#dc2626';
       q.querySelectorAll('input').forEach(input=>input.disabled=true);
       refreshQuizScore(box);
@@ -142,7 +146,7 @@ function setupChapterSelection(){
     });
     const shown=items.filter(item=>!item.hidden);
     const mcqs=shown.filter(item=>item.classList.contains('quiz-question')).length;
-    $('#chapter-status').textContent=`${mcqs} MCQs and ${shown.length-mcqs} written questions shown. Answers are kept while switching chapters.`;
+    $('#chapter-status').textContent=tr('chapter_status','{mcqs} MCQs and {written} written questions shown. Answers are kept while switching chapters.',{mcqs,written:shown.length-mcqs});
     $('#chapter-links').hidden=chapter==='all';
     const option=select.selectedOptions[0];
     if(chapter!=='all'){
@@ -193,7 +197,7 @@ function setupPracticeNavigation(){
       if(option){
         location.replace(option.dataset.page);
       }else{
-        status.textContent='Choose a valid chapter below to open its question page.';
+        status.textContent=tr('choose_valid_chapter','Choose a valid chapter below to open its question page.');
       }
     }
   }
@@ -212,7 +216,7 @@ function setupQuestionSections(){
     select.value=kind;
     sections.forEach(section=>section.hidden=kind!=='all'&&section.dataset.practiceSection!==kind);
     const count=sections.filter(section=>!section.hidden).reduce((sum,section)=>sum+section.querySelectorAll('.practice-question').length,0);
-    $('[data-question-status]').textContent=`${count} of ${total} questions shown. Answers remain as you left them; use Hide all answers to close them.`;
+    $('[data-question-status]').textContent=tr('q_status','{count} of {total} questions shown. Answers remain as you left them; use Hide all answers to close them.',{count,total});
   };
   const kindFromHash=hash=>hash.match(/^#(mcq|short|long|application|competitive)(?:-\d+)?$/)?.[1];
   $('[data-question-controls]').hidden=false;
